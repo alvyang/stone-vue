@@ -1,10 +1,7 @@
 var webpack = require('webpack');
 var path = require('path');
-//var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 module.exports = {
-	//插件项
-//    plugins: [commonsPlugin],
     //页面入口文件配置
     entry: {
         index : './js/index.js'
@@ -37,6 +34,7 @@ module.exports = {
     },
     //其它解决方案配置
     resolve: {
+    	root:[path.join(__dirname)],
         extensions: ['', '.js', '.json','.css']
     }
 };
