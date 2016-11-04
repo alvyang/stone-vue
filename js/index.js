@@ -1,30 +1,21 @@
 import Vue from	'vue/dist/vue.js';
-import VueRouter from 'vue-router';
-import Navigation from "components/navigation/navigation.vue";
+import Navigation from "components/navigation/navigation.js";
+import logo from "components/logo/logo.vue";
 
-Vue.use(VueRouter);
-
-const nav = {
-	template:`<div>
-				<h2>nav {{$route.params.id}}</h2>
-			  </div>`,
-	watch: {
-	    '$route' (to, from) {
-//	      	// 对路由变化作出响应...
-//	      	console.log(to);
-//	      	console.log(from);
-	    }
-	}
-};
-
-const router = new VueRouter({
-	routes:[
-		//动态路径参数，以冒号开头
-		{path:'/nav/:id',name:'nav',component:nav}
-	]
-});
+//var MyNavigation = Vue.extend({
+//	template:Navigation
+//});
+//
+//Vue.component('my-navigation',MyNavigation);
+//
+//var MyLogo = Vue.extend({template:logo});
+//
+//Vue.component('my-logo',MyLogo);
 
 new Vue({
-	...Navigation,
-	router
-}).$mount('#navigation');
+	el:"#navigation",
+	components: {
+	    'my-navigation': Navigation,
+	    'my-logo':logo
+	}
+});
