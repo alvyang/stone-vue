@@ -1,27 +1,38 @@
 <template>
 	<div>
 		<div class="navigation">
-			<router-link to="{path:n.id}" v-for="n in nav">{{n.name}}</router-link>
+			<router-link :to="{name:'nav',params:{id:n.id}}" v-for="n in nav">{{n.name}}</router-link>
 		</div>
 		<router-view></router-view>
 	</div>
 </template>
 <style>
 	.navigation{
+		background-color:#ffffff;
+		border-bottom:solid 1px #cdcdcd;
 		width:100%;
 		height:80px;
+		text-align:center;
 	}
 	.navigation a{
 		display:inline-block;
 		width:100px;
+		height:40px;
+		line-height:40px;
+		margin-top: 20px;
 		text-decoration: none;
+		color:#f04046;
+	}
+	.navigation a:hover{
+		font-weight:bold;
 	}
 </style>
 <script>
 	export default{
 		data(){
 			return {
-				nav:[]
+				nav:[],
+				transitionName: 'slide-left'
 			}
 		},
 		created(){
@@ -29,8 +40,15 @@
 			this.getNavData()
 		},
 		watch:{
-			// 如果路由有变化，会再次执行该方法
-			'$route':'getNavData'
+			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法
+			//'$route':'getNavData'
+			'$route' (to, from) {
+//				console.log(to);
+//				console.log(from);
+			    const toDepth = to.path.split('/').length
+			    const fromDepth = from.path.split('/').length
+			    this.transitionName = toDepth < fromDepth ? 'slide-right' : 'slide-left'
+			}
 		},
 		methods:{
 			getNavData(){
