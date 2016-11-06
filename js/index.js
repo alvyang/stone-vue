@@ -1,5 +1,6 @@
 import Vue from	'vue/dist/vue.js';
 import Navigation from "components/navigation/navigation.vue";
+import NavigationRouter from "components/navigation/navigation.js";
 import logo from "components/logo/logo.vue";
 
 //var MyNavigation = Vue.extend({
@@ -15,7 +16,10 @@ import logo from "components/logo/logo.vue";
 new Vue({
 	el:"#navigation",
 	components: {
-	    'my-navigation': Navigation,
+	    'my-navigation': new Vue({
+	    		router:NavigationRouter,
+	    		...Navigation
+	    }).$amunt("#navigation"),
 	    'my-logo':logo
 	}
 });

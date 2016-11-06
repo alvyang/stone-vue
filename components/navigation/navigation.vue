@@ -1,4 +1,4 @@
-<template id="nav_template">
+<template>
 	<div>
 		<div class="navigation">
 			<router-link :to="{name:'nav',params:{id:n.id}}" v-for="n in nav">{{n.name}}</router-link>
@@ -7,14 +7,7 @@
 	</div>
 </template>
 <script>
-	import Vue from "vue/dist/vue.js";
-	import VueRouter from "vue-router";
-	import router from "./navigation.js";
-	Vue.use(VueRouter);
-	
-	var navigation = Vue.extend({
-		template:"#nav_template",
-		router,
+	export default({
 		data(){
 			return {
 				nav:[]
@@ -37,7 +30,6 @@
 			}
 		}
 	});
-	export default navigation
 </script>
 <style>
 	.navigation{
