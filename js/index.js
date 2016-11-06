@@ -1,5 +1,5 @@
 import Vue from	'vue/dist/vue.js';
-import Navigation from "components/navigation/navigation.js";
+import Navigation from "components/navigation/navigation.vue";
 import logo from "components/logo/logo.vue";
 
 //var MyNavigation = Vue.extend({
