@@ -3,23 +3,16 @@ import Navigation from "components/navigation/navigation.vue";
 import NavigationRouter from "components/navigation/navigation.js";
 import logo from "components/logo/logo.vue";
 
-//var MyNavigation = Vue.extend({
-//	template:Navigation
-//});
-//
-//Vue.component('my-navigation',MyNavigation);
-//
-//var MyLogo = Vue.extend({template:logo});
-//
-//Vue.component('my-logo',MyLogo);
+//注册全局组件
+Vue.component('my-navigation',new Vue({
+	router:NavigationRouter,
+	...Navigation
+}).$mount("#navigation"));
 
+//注册子组件
 new Vue({
-	el:"#navigation",
+	el:"#top",
 	components: {
-	    'my-navigation': new Vue({
-	    		router:NavigationRouter,
-	    		...Navigation
-	    }).$amunt("#navigation"),
 	    'my-logo':logo
 	}
 });
