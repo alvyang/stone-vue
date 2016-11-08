@@ -13,6 +13,7 @@
 > +img	项目全局图片  
 > +js	项目全局js文件  
 > +router	路由  
+
 #组件  
 ##components/navigation
 1.在配置文件db/data.json中以json格式，配置导航信息。  
