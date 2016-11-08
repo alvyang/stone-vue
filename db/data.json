@@ -1,1 +1,19 @@
-{}
+{
+	"nav":[{
+		"name":"首页",
+		"id":"1"
+	},{
+		"name":"组件",
+		"id":"2"
+	}],
+	"menu":[{
+		"name":"input组件",
+		"id":"input"
+	},{
+		"name":"button组件",
+		"id":"button"
+	},{
+		"name":"select组件",
+		"id":"select"
+	}]
+}

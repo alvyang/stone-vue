@@ -13,3 +13,10 @@
 > +img	项目全局图片  
 > +js	项目全局js文件  
 > +router	路由  
+#组件  
+##components/navigation
+1.在配置文件db/data.json中以json格式，配置导航信息。  
+2.在navigation.vue文件中，异步请求data.json中的nav数据，并初始化导航栏。  
+3.navigation组件以子组件的方式，注册到id为navigation的vue下。
+##components/logo
+项目logo组件

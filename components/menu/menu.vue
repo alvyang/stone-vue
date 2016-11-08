@@ -1,14 +1,14 @@
-<template>
-	<div class="navigation">
-		<a v-for="n in nav">{{n.name}}</a>
-	</div>
+<template id="my_menu">
+	<ul>
+		<li :to="{name:'nav',params:{id:m.id}}" v-for="m in menu">{{m.name}}</li>
+	</ul>
 </template>
 <script>
 	import $ from "jquery";
 	export default({
 		data(){
 			return {
-				nav:[]
+				menu:[]
 			}
 		},
 		created(){
@@ -25,33 +25,12 @@
 				var _self = this;
 				$.ajaxSettings.async = false; 
 				$.getJSON("db/data.json",{},function(data){
-				    _self.nav=data.nav;
+				    _self.menu=data.menu;
 				});
 			}
 		}
 	});
 </script>
 <style>
-	.navigation{
-		background-color:#ffffff;
-		border-bottom:solid 1px #cdcdcd;
-		width:100%;
-		height:80px;
-		box-sizing: border-box;
-		text-align:center;
-	}
-	.navigation a{
-		display:inline-block;
-		box-sizing: border-box;
-		width:100px;
-		height:80px;
-		line-height:80px;
-		text-decoration: none;
-		color:#f04046;
-		cursor:pointer;
-	}
-	.navigation a:hover{
-		font-weight:bold;
-		border-bottom: solid 1px #f04646;
-	}
+	
 </style>
