@@ -1,6 +1,6 @@
 <template>
 	<div class="logo">
-		<a>石头vue</a>
+		<a>{{logo}}</a>
 	</div>
 </template>
 <style>
