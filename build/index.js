@@ -20888,7 +20888,7 @@
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\nul{\n    list-style-type: none;\n    -webkit-margin-before: 0em;\n    -webkit-margin-after: 0em;\n    -webkit-margin-start: 0px;\n    -webkit-margin-end: 0px;\n    -webkit-padding-start: 0px;\n    width: 180px;\n    height: 100%;\n    border-right:solid 1px #cdcdcd ;\n}\n", ""]);
 
 	// exports
 

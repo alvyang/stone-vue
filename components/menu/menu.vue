@@ -32,5 +32,15 @@
 	});
 </script>
 <style>
-	
+	ul{
+	    list-style-type: none;
+	    -webkit-margin-before: 0em;
+	    -webkit-margin-after: 0em;
+	    -webkit-margin-start: 0px;
+	    -webkit-margin-end: 0px;
+	    -webkit-padding-start: 0px;
+	    width: 180px;
+	    height: 100%;
+	    border-right:solid 1px #cdcdcd ;
+	}
 </style>
