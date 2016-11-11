@@ -3,24 +3,26 @@ import VueRouter from 'vue-router';
 
 import Navigation from "components/navigation/navigation.vue";
 import logo from "components/logo/logo.vue";
-import menu from "components/menu/menu.vue";
+import Menu from "components/menu/menu.vue";
 
 Vue.use(VueRouter);
 
-/* 
- * 创建全局组件，并在vue组件，发送异步请求，获取menu数据
- */
-var Menu = Vue.component('my-menu',{
-	...menu
-});
-
 var Main = {template : "<div>首页</div>"};
-const routes = [
-	{path:'/nav/1',component:Main},
-	{path:'/nav/2',component:Menu}
-];
+const Home = {template: '<router-view></router-view>' }
 const router = new VueRouter({
-	routes
+	routes:[
+		{path:'/',component:Home,children:[
+			{path:'',component:Main},
+			{path:'main',component:Main},
+			{path:'menu',component:Menu}
+		]},
+		{path:'/nav/:id?',name:'nav',redirect: to => {
+	      	const {hash,params,query} = to;
+	      	return {path:'/'+params.id};
+	    }},
+	    //catch all redirect
+    	{ path: '*', redirect: '/' }
+	]
 });
 /*
  * 注册子组件,并在子组件中，通过props  default的方式传入固定值。
@@ -28,7 +30,7 @@ const router = new VueRouter({
 new Vue({
 	el:"#navigation",
 	router,
-	components: {
+	components:{
 		'my-navigation':Navigation,
 	    'my-logo':{
 	    	...logo,

@@ -1,10 +1,10 @@
 {
 	"nav":[{
 		"name":"首页",
-		"id":"1"
+		"id":"main"
 	},{
 		"name":"组件",
-		"id":"2"
+		"id":"menu"
 	}],
 	"menu":[{
 		"name":"input组件",

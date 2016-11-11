@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="navigation">
-			<router-link :to="{path:'/nav/1',name:'nav',params:{id:n.id}}" v-for="n in nav">{{n.name}}</router-link>
+			<router-link :to="{name:'nav',params:{id:n.id}}" v-for="n in nav">{{n.name}}</router-link>
 		</div>
 		<router-view></router-view>
 	</div>
@@ -21,6 +21,7 @@
 		watch:{
 			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
 			'$route' (to, from){
+				
 			}
 		},
 		methods:{

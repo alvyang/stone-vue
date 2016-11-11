@@ -74,15 +74,18 @@
 
 	_vue2.default.use(_vueRouter2.default);
 
-	/* 
-	 * 创建全局组件，并在vue组件，发送异步请求，获取menu数据
-	 */
-	var Menu = _vue2.default.component('my-menu', (0, _extends3.default)({}, _menu2.default));
-
 	var Main = { template: "<div>首页</div>" };
-	var routes = [{ path: '/nav/1', component: Main }, { path: '/nav/2', component: Menu }];
+	var Home = { template: '<router-view></router-view>' };
 	var router = new _vueRouter2.default({
-		routes: routes
+		routes: [{ path: '/', component: Home, children: [{ path: '', component: Main }, { path: 'main', component: Main }, { path: 'menu', component: _menu2.default }] }, { path: '/nav/:id?', name: 'nav', redirect: function redirect(to) {
+				var hash = to.hash,
+				    params = to.params,
+				    query = to.query;
+
+				return { path: '/' + params.id };
+			} },
+		//catch all redirect
+		{ path: '*', redirect: '/' }]
 	});
 	/*
 	 * 注册子组件,并在子组件中，通过props  default的方式传入固定值。
@@ -20689,7 +20692,6 @@
 	    return _h('router-link', {
 	      attrs: {
 	        "to": {
-	          path: '/nav/1',
 	          name: 'nav',
 	          params: {
 	            id: n.id
