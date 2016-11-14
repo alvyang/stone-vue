@@ -3,7 +3,6 @@
 		<div class="navigation">
 			<router-link :to="{name:'nav',params:{id:n.id}}" v-for="n in nav">{{n.name}}</router-link>
 		</div>
-		<router-view></router-view>
 	</div>
 </template>
 <script>

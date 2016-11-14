@@ -1,14 +1,14 @@
 import Vue from	'vue/dist/vue.js';
 import VueRouter from 'vue-router';
 
-import Navigation from "components/navigation/navigation.vue";
-import logo from "components/logo/logo.vue";
-import Menu from "components/menu/menu.vue";
+import Navigation from "components/navigation.vue";
+import Logo from "components/logo.vue";
+import Menu from "components/menu.vue";
 
 Vue.use(VueRouter);
 
-var Main = {template : "<div>首页</div>"};
-const Home = {template: '<router-view></router-view>' }
+const Main = {template : "<div style='text-align:center;'>首页</div>"};
+const Home = {template: '<router-view></router-view>'};
 const router = new VueRouter({
 	routes:[
 		{path:'/',component:Home,children:[
@@ -25,15 +25,16 @@ const router = new VueRouter({
 	]
 });
 /*
- * 注册子组件,并在子组件中，通过props  default的方式传入固定值。
+ * 1.注册子组件,并在子组件中，通过props  default的方式传入固定值。
+ * 2.将路由功能，添加到app下，将所有的子组件，添加相同的路由功能。
  */
 new Vue({
-	el:"#navigation",
+	el:"#app",
 	router,
 	components:{
 		'my-navigation':Navigation,
 	    'my-logo':{
-	    	...logo,
+	    	...Logo,
 	    	props:{
 				logo:{
 					default:"vue"

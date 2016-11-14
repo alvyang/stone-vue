@@ -3,17 +3,21 @@
 		"name":"首页",
 		"id":"main"
 	},{
-		"name":"组件",
+		"name":"组件库",
 		"id":"menu"
+	},{
+		"name":"Github",
+		"id":"url",
+		"url":"https://github.com/alvyang/stone-vue"
 	}],
 	"menu":[{
-		"name":"input组件",
+		"name":"表单组件",
 		"id":"input"
 	},{
-		"name":"button组件",
-		"id":"button"
-	},{
-		"name":"select组件",
+		"name":"按钮组件",
 		"id":"select"
+	},{
+		"name":"其它组件",
+		"id":"button"
 	}]
 }

@@ -74,7 +74,7 @@
 
 	_vue2.default.use(_vueRouter2.default);
 
-	var Main = { template: "<div>首页</div>" };
+	var Main = { template: "<div style='text-align:center;'>首页</div>" };
 	var Home = { template: '<router-view></router-view>' };
 	var router = new _vueRouter2.default({
 		routes: [{ path: '/', component: Home, children: [{ path: '', component: Main }, { path: 'main', component: Main }, { path: 'menu', component: _menu2.default }] }, { path: '/nav/:id?', name: 'nav', redirect: function redirect(to) {
@@ -88,10 +88,11 @@
 		{ path: '*', redirect: '/' }]
 	});
 	/*
-	 * 注册子组件,并在子组件中，通过props  default的方式传入固定值。
+	 * 1.注册子组件,并在子组件中，通过props  default的方式传入固定值。
+	 * 2.将路由功能，添加到app下，将所有的子组件，添加相同的路由功能。
 	 */
 	new _vue2.default({
-		el: "#navigation",
+		el: "#app",
 		router: router,
 		components: {
 			'my-navigation': _navigation2.default,
@@ -10067,7 +10068,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\components\\navigation\\navigation.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\components\\navigation.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -10078,9 +10079,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-11883802", __vue_options__)
+	    hotAPI.createRecord("data-v-62b82501", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-11883802", __vue_options__)
+	    hotAPI.reload("data-v-62b82501", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] navigation.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -10104,8 +10105,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-11883802!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-11883802!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-62b82501!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-62b82501!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -10447,7 +10448,6 @@
 			}
 		}
 	}; //
-	//
 	//
 	//
 	//
@@ -20699,12 +20699,12 @@
 	        }
 	      }
 	    }, [_s(n.name)])
-	  })]), " ", _h('router-view')])
+	  })])])
 	}},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-11883802", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-62b82501", module.exports)
 	  }
 	}
 
@@ -20730,7 +20730,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\components\\logo\\logo.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\components\\logo.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -20741,9 +20741,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6c5d48df", __vue_options__)
+	    hotAPI.createRecord("data-v-3e063e50", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-6c5d48df", __vue_options__)
+	    hotAPI.reload("data-v-3e063e50", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] logo.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -20767,8 +20767,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6c5d48df!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./logo.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6c5d48df!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./logo.vue");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3e063e50!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./logo.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3e063e50!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./logo.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -20786,7 +20786,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.logo{\n\tposition:absolute;\n\tleft: 0;\n\ttop: 0;\n\theight:80px;\n\twidth: 150px;\n\tline-height:80px;\n\ttext-align: center;\n}\n", ""]);
+	exports.push([module.id, "\n.logo{\n\tposition:absolute;\n\tleft: 0;\n\ttop: 0;\n\theight:80px;\n\twidth: 150px;\n\tline-height:80px;\n\ttext-align: center;\n\tcursor: default;\n}\n.logo a{\n\ttext-decoration: none;\n\tcolor:#f04046;\n\tcursor: default;\n}\n", ""]);
 
 	// exports
 
@@ -20798,12 +20798,18 @@
 	module.exports={render:function (){with(this) {
 	  return _h('div', {
 	    staticClass: "logo"
-	  }, [_h('a', [_s(logo)])])
+	  }, [_h('router-link', {
+	    attrs: {
+	      "to": {
+	        path: '/'
+	      }
+	    }
+	  }, [_s(logo)])])
 	}},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-6c5d48df", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3e063e50", module.exports)
 	  }
 	}
 
@@ -20832,7 +20838,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\components\\menu\\menu.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\components\\menu.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -20843,9 +20849,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-3d12b95f", __vue_options__)
+	    hotAPI.createRecord("data-v-4426368c", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-3d12b95f", __vue_options__)
+	    hotAPI.reload("data-v-4426368c", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] menu.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -20869,8 +20875,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3d12b95f!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./menu.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3d12b95f!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./menu.vue");
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4426368c!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./menu.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4426368c!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./menu.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -20888,7 +20894,7 @@
 
 
 	// module
-	exports.push([module.id, "\nul{\n    list-style-type: none;\n    -webkit-margin-before: 0em;\n    -webkit-margin-after: 0em;\n    -webkit-margin-start: 0px;\n    -webkit-margin-end: 0px;\n    -webkit-padding-start: 0px;\n    width: 180px;\n    height: 100%;\n    border-right:solid 1px #cdcdcd ;\n}\n", ""]);
+	exports.push([module.id, "\n.menu_list{\n    list-style-type: none;\n    -webkit-margin-before: 0em;\n    -webkit-margin-after: 0em;\n    -webkit-margin-start: 0px;\n    -webkit-margin-end: 0px;\n    -webkit-padding-start: 0px;\n    width: 180px;\n    border-right:solid 1px #cdcdcd ;\n}\n.menu_list li{\n\tcursor: pointer;\n\ttext-align: center;\n\twidth: 100%;\n\theight: 50px;\n\tline-height: 50px;\n}\n.menu_list li:hover{\n\tbackground: #464646;\n}\n", ""]);
 
 	// exports
 
@@ -20919,6 +20925,13 @@
 			//组件创建完成后，获取数据  此时的data已经被observed了
 			this.getNavData();
 		},
+		mounted: function mounted() {
+			/*
+	   * el被新创建的vm.$el替换，并挂载到实例上去之后，调用该钩子
+	   * 设置菜单导航高度
+	   */
+			(0, _jquery2.default)(".menu_list").height((0, _jquery2.default)(window).height() - 80);
+		},
 
 		watch: {
 			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
@@ -20944,7 +20957,9 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){with(this) {
-	  return _h('ul', [_l((menu), function(m) {
+	  return _h('ul', {
+	    staticClass: "menu_list"
+	  }, [_l((menu), function(m) {
 	    return _h('li', {
 	      attrs: {
 	        "to": {
@@ -20960,7 +20975,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3d12b95f", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-4426368c", module.exports)
 	  }
 	}
 

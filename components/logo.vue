@@ -1,6 +1,6 @@
 <template>
 	<div class="logo">
-		<a>{{logo}}</a>
+		<router-link :to="{path:'/'}" >{{logo}}</router-link>
 	</div>
 </template>
 <style>
@@ -12,5 +12,11 @@
 		width: 150px;
 		line-height:80px;
 		text-align: center;
+		cursor: default;
+	}
+	.logo a{
+		text-decoration: none;
+		color:#f04046;
+		cursor: default;
 	}
 </style>
