@@ -2,7 +2,9 @@
 创建该项目有以下几个目的
 *学习使用vue以及与vue相关插件。
 *用vue做前端组件。  
-前端界面显示参考[MTUI](http://mtui.mtsee.com/)  
+前端界面显示参考  
+[MTUI](http://mtui.mtsee.com/)  
+[iView](https://www.iviewui.com/)			
 
 #目录结构
 > +build	webpack打包后的文件  
