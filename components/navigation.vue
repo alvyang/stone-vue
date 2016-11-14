@@ -1,7 +1,8 @@
 <template>
 	<div>
 		<div class="navigation">
-			<router-link :to="{name:'nav',params:{id:n.id}}" v-for="n in nav">{{n.name}}</router-link>
+			<router-link :to="{name:'nav',params:{id:n.id}}"  v-for="n in nav" v-if="n.id!='url'">{{n.name}}</router-link>
+			<a v-bind:href="n.url" target="_blank" v-else>{{n.name}}</a>
 		</div>
 	</div>
 </template>

@@ -21,7 +21,7 @@ const router = new VueRouter({
 	      	return {path:'/'+params.id};
 	    }},
 	    //catch all redirect
-    	{ path: '*', redirect: '/' }
+    		{ path: '*', redirect: '/' }
 	]
 });
 /*
@@ -34,8 +34,8 @@ new Vue({
 	components:{
 		'my-navigation':Navigation,
 	    'my-logo':{
-	    	...Logo,
-	    	props:{
+		    	...Logo,
+		    	props:{
 				logo:{
 					default:"vue"
 				}
