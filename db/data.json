@@ -4,7 +4,7 @@
 		"id":"main"
 	},{
 		"name":"组件库",
-		"id":"menu"
+		"id":"comp_lib"
 	},{
 		"name":"Github",
 		"id":"url",
@@ -12,12 +12,12 @@
 	}],
 	"menu":[{
 		"name":"表单组件",
-		"id":"input"
+		"id":"form"
 	},{
 		"name":"按钮组件",
-		"id":"select"
+		"id":"button"
 	},{
 		"name":"其它组件",
-		"id":"button"
+		"id":"other"
 	}]
 }

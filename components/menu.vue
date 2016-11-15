@@ -1,6 +1,6 @@
 <template id="my_menu">
 	<ul class="menu_list">
-		<li :to="{name:'nav',params:{id:m.id}}" v-for="m in menu">{{m.name}}</li>
+		<router-link :to="{path:'/menu',name:'menu',params:{id:m.id}}" tag="li" v-for="m in menu">{{m.name}}</router-link>
 	</ul>
 </template>
 <script>

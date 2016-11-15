@@ -11,12 +11,15 @@
 > +components	项目中用到的公共组件  
 >> -logo	logo组件  
 >> -navigation	导航组件  
+>> -menu	左侧菜单导航  
 
 > +css	项目全局css样式  
 > +db	项目用到的静态数据和模拟获取数据库json数据  
 > +img	项目全局图片  
 > +js	项目全局js文件  
 > +router	路由  
+> +view 非组件类vue界面  
+
 
 #组件  
 ##components/navigation
