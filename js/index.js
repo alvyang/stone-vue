@@ -8,6 +8,10 @@ import Main from "view/main.vue";
 import Comp_lib from "view/component_library.vue";
 Vue.use(VueRouter);
 
+//测试vue
+import From from "view/form.vue";
+import Button from "view/button.vue";
+import Other from "view/other.vue";
 const router = new VueRouter({
 	routes:[{
 		path:'/',component:Main
@@ -16,16 +20,22 @@ const router = new VueRouter({
 	},{
 		path:'/comp_lib',
 		component:Comp_lib,
-		subRoutes: {
-            'form': {
-            	name:"form",
-                component: "<div>form</div>"
-            },
-            'button': {
-            	name:"button",
-                component: "<div>button</div>"
-            }
-        }
+		children:[{
+			path:"",
+            component: From
+        },{
+			path:"form",
+        	name:"form",
+            component: From
+        },{
+        	path:"button",
+        	name:"button",
+            component: Button
+        },{
+        	path:"other",
+        	name:"other",
+            component: Other
+        }]
 	},{
 		path:'/nav/:id',name:'nav',redirect: to => {
 	      	const {hash,params,query} = to;
