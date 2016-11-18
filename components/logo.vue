@@ -5,6 +5,8 @@
 </template>
 <style>
 	.logo{
+		background: url(../img/stone.png) left center no-repeat;
+		background-size: 60px auto;
 		position:absolute;
 		left: 0;
 		top: 0;
