@@ -1,6 +1,8 @@
 import Vue from	'vue/dist/vue.js';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 Vue.use(VueRouter);
+Vue.use(VueResource);
 //引入非组件类界面
 import Main from "view/main.vue";
 import Comp_lib from "view/component_library.vue";

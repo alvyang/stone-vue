@@ -5,9 +5,9 @@
 </template>
 <style>
 	.logo{
-		background: url(../img/stone.png) left center no-repeat;
-		background-size: 60px auto;
 		position:absolute;
+		background: url(../img/stone.png) center center no-repeat;
+		background-size: 60px auto;
 		left: 0;
 		top: 0;
 		height:80px;
@@ -18,7 +18,10 @@
 	}
 	.logo a{
 		text-decoration: none;
-		color:#f04046;
-		cursor: default;
+	    color: black;
+	    cursor: default;
+	    padding-left: 115px;
+	    font-size: 25px;
+	    line-height: 75px;
 	}
 </style>

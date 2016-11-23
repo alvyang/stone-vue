@@ -22,7 +22,7 @@ module.exports = {
         	exclude: /node_modules/,
       		loader: 'babel'
       	},{ 
-      		test: /\.(png|jpg)$/,loader: 'url-loader?limit=8192'
+      		test: /\.(png|jpg)$/,loader: 'url-loader?limit=18192'
       	}]
     },
     vue: {
