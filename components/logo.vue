@@ -19,7 +19,7 @@
 	.logo a{
 		text-decoration: none;
 	    color: black;
-	    cursor: default;
+	    cursor: pointer;
 	    padding-left: 115px;
 	    font-size: 25px;
 	    line-height: 75px;

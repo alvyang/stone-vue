@@ -40,6 +40,7 @@
 </script>
 <style>
 	.menu_list{
+		box-sizing: border-box;
 	    list-style-type: none;
 	    -webkit-margin-before: 0em;
 	    -webkit-margin-after: 0em;
