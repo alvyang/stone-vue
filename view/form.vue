@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<div @click="selectNav" class="form_nav">
-			<router-link :to="{path:'/option_tab',name:'option_tab',params:{id:fn.path}}" tag="span" v-for="fn in formNav" :class="{sel:fn.current}">
+		<div class="form_nav">
+			<router-link :to="{path:'/option_tab',name:'option_tab',params:{id:fn.path}}" active-class='sel' tag="span" v-for="fn in formNav" >
 				{{fn.name}}
 			</router-link>
 		</div>
@@ -10,21 +10,16 @@
 </template>
 <script>
 	import $ from "jquery";
-	var formNav = [{name:"input输入框",path:"input",current:true},
-				   {name:"radio单选框",path:"radio",current:false},
-				   {name:"checkbox多选框",path:"checkbox",current:false},
-				   {name:"select选择器",path:"select",current:false},
-				   {name:"select多选择器",path:"selects",current:false}];
+	var formNav = [{name:"input输入框",path:"input"},
+				   {name:"radio单选框",path:"radio"},
+				   {name:"checkbox多选框",path:"checkbox"},
+				   {name:"select选择器",path:"select"},
+				   {name:"select多选择器",path:"selects"}];
 	
 	export default({
 		data(){
 			return {
 				formNav:formNav
-			}
-		},
-		methods:{
-			selectNav(){
-				
 			}
 		}
 	});
@@ -45,7 +40,7 @@
 		cursor: pointer;
 		color: #999999;
 	}
-	.form_nav span.sel{
+	.sel{
 		color: #313a49;
 	    border-bottom: 3px solid #313a49;
 	}
