@@ -1,29 +1,22 @@
 <template>
 	<div class="main" style='text-align:center;'>
-		<div class="main_content">首页</div>
+		<my-navigation></my-navigation>
+		<my-logo></my-logo>
+		<router-view></router-view>
 	</div>
 </template>
 <script>
-	import $ from "jquery";
+	//引入组件
+	import Navigation from "components/navigation.vue";
+	import Logo from "components/logo.vue";
+	
 	export default({
-		mounted(){
-			/*
-			 * el被新创建的vm.$el替换，并挂载到实例上去之后，调用该钩子
-			 * 设置菜单导航高度
-			 */
-			$(".main").height($(window).height()-80);
+		components:{
+			'my-navigation':Navigation,
+		    'my-logo':Logo
 		}
 	});
 </script>
 <style>
-	.main_content{
-		position: relative;
-		top:50%;
-		height: 300px;
-		width: 500px;
-		line-height: 300px;
-		margin-top: -150px;
-		margin-left: auto;
-		margin-right: auto;
-	}
+
 </style>

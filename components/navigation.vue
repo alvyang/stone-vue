@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="navigation">
-			<router-link :to="{path:'/nav',name:'nav',params:{id:n.id}}"  v-for="n in nav" v-if="n.id!='url'">{{n.name}}</router-link>
+			<router-link :to="{path:'/nav',name:'nav',params:{id:n.id}}" activeClass="nav_active" v-for="n in nav" v-if="n.id!='url'">{{n.name}}</router-link>
 			<a v-bind:href="n.url" target="_blank" v-else>{{n.name}}</a>
 		</div>
 	</div>
@@ -54,7 +54,7 @@
 		color:#f04046;
 		cursor:pointer;
 	}
-	.navigation a:hover{
+	.nav_active{
 		font-weight:bold;
 		border-bottom: solid 1px #f04646;
 	}

@@ -1,8 +1,6 @@
 import Vue from	'vue/dist/vue.js';
 import VueResource from 'vue-resource';
-//引入组件
-import Navigation from "components/navigation.vue";
-import Logo from "components/logo.vue";
+
 Vue.use(VueResource);
 
 //引入路由
@@ -13,16 +11,5 @@ import router from "router/router.js";
  */
 new Vue({
 	el:"#app",
-	router,
-	components:{
-		'my-navigation':Navigation,
-	    'my-logo':{
-	    	...Logo,
-	    	props:{
-				logo:{
-					default:"vue"
-				}
-			}
-	    }
-	}
+	router
 });
