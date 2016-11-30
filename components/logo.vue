@@ -1,13 +1,13 @@
 <template>
 	<div class="logo">
-		<router-link :to="{path:'/'}" ></router-link>
+		<router-link :to="{path:'/'}" >复方view</router-link>
 	</div>
 </template>
 <style>
 	.logo{
 		position:absolute;
-		background: url(../img/stone.png) center center no-repeat;
-		background-size: 60px auto;
+		background: url(../img/logo.png) 20px center no-repeat;
+		background-size: 40px auto;
 		left: 0;
 		top: 0;
 		height:80px;
@@ -20,8 +20,8 @@
 		text-decoration: none;
 	    color: black;
 	    cursor: pointer;
-	    padding-left: 115px;
-	    font-size: 25px;
+        padding-left: 57px;
+   		font-size: 15px;
 	    line-height: 75px;
 	}
 </style>
