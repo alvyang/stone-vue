@@ -17,6 +17,11 @@ new Vue({
 	router,
 	components:{
 		'my-navigation':Navigation,
-	    'my-logo':Logo
+	    'my-logo':{
+	    	...Logo,
+	    	props:{
+	    		logoName:{default:'复方view'}
+	    	}
+	    }
 	}
 });

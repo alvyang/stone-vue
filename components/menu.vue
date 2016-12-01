@@ -1,6 +1,6 @@
 <template id="my_menu">
 	<ul class="menu_list">
-		<router-link :to="{path:'/menu',name:'menu',params:{id:m.id}}" tag="li" v-for="m in menu">{{m.name}}</router-link>
+		<li v-on:click="routePate(m.id,index)" :class="{menu_active:index==0}" v-for="(m,index) in menu">{{m.name}}</li>
 	</ul>
 </template>
 <script>
@@ -28,6 +28,11 @@
 			}
 		},
 		methods:{
+			routePate(path,index){
+				this.$router.push({path:"/comp_lib/"+path});
+				$(".menu_list > li").removeClass("menu_active");
+				$(".menu_list > li").eq(index).addClass("menu_active");
+			},
 			getNavData(){
 				var _self = this;
 				$.ajaxSettings.async = false; 
@@ -57,7 +62,7 @@
 		height: 50px;
 		line-height: 50px;
 	}
-	.menu_list li:hover{
+	.menu_active{
 		background: #464646;
 	}
 </style>

@@ -1,12 +1,13 @@
 <template>
-		<div class="form_nav">
-			<router-link :to="{path:'option_tab',name:'option_tab',params:{id:fn.path}}" append activeClass="sel-active" v-for="fn in formNav" >
-				{{fn.name}}
-			</router-link>
-			<router-view class="form_tab"></router-view>
-		</div>
+	<div class="form_nav">
+		<span v-on:click="routePage(fn.path,index)" :class="{sel_active:index==0}" v-for="(fn,index) in formNav" >
+			{{fn.name}}
+		</span>
+		<router-view class="form_tab"></router-view>
+	</div>
 </template>
 <script>
+	import $ from "jquery";
 	var formNav = [{name:"input输入框",path:"input"},
 				   {name:"radio单选框",path:"radio"},
 				   {name:"checkbox多选框",path:"checkbox"},
@@ -20,16 +21,22 @@
 			}
 		},
 		mounted(){
-			console.log(this);
+			
+		},
+		methods:{
+			routePage(path,index){
+				//使用router-link 无法动态添加路径，采用编程路由方式实现
+				this.$router.push({path:"/comp_lib/form/"+path});
+				$(".form_nav > span").removeClass("sel_active");
+				$(".form_nav > span").eq(index).addClass("sel_active");
+			}
 		}
 	});
 </script>
 <style>
 	.form_nav,.form_tab{
 		box-sizing: border-box;
-		padding-left: 20px;
-		padding-right: 20px;
-		padding-top: 20px;
+	    padding: 20px;
 	}
 	.form_nav span{
 		display: inline-block;
@@ -41,7 +48,7 @@
 		cursor: pointer;
 		color: #999999;
 	}
-	.sel-active{
+	.sel_active{
 		color: #313a49;
 	    border-bottom: 3px solid #313a49;
 	}

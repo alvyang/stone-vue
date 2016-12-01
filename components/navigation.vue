@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="navigation">
-			<router-link :to="{path:'/nav',name:'nav',params:{id:n.id}}" activeClass="nav_active" v-for="n in nav" v-if="n.id!='url'">{{n.name}}</router-link>
+			<a v-on:click="routePage(n.id,index)" v-for="(n,index) in nav" :class="{nav_active:index==0}" v-if="n.id!='url'">{{n.name}}</a>
 			<a v-bind:href="n.url" target="_blank" v-else>{{n.name}}</a>
 		</div>
 	</div>
@@ -11,7 +11,8 @@
 	export default({
 		data(){
 			return {
-				nav:[]
+				nav:[],
+				base:"/",//相对路径，根路径
 			}
 		},
 		created(){
@@ -25,6 +26,12 @@
 			}
 		},
 		methods:{
+			routePage(path,index){
+				//使用router-link 无法动态添加路径，采用编程路由方式实现
+				this.$router.push({path:"/"+path});
+				$(".navigation > a").removeClass("nav_active");
+				$(".navigation > a").eq(index).addClass("nav_active");
+			},
 			getNavData(){
 				var _self = this;
 				$.ajaxSettings.async = false; 

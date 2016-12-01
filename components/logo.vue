@@ -1,6 +1,6 @@
 <template>
 	<div class="logo">
-		<router-link :to="{path:'/'}" >复方view</router-link>
+		<router-link :to="{path:'/'}" >{{logoName}}</router-link>
 	</div>
 </template>
 <style>
