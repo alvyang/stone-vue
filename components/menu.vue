@@ -25,11 +25,13 @@
 		watch:{
 			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
 			'$route' (to, from) {
+				console.log(from);
+				console.log(to);
 			}
 		},
 		methods:{
 			routePate(path,index){
-				console.log(this.$router.currentRoute);
+				//console.log(this.$router.currentRoute);
 				this.$router.push({path:"/comp_lib/"+path});
 				$(".menu_list > li").removeClass("menu_active");
 				$(".menu_list > li").eq(index).addClass("menu_active");
@@ -38,11 +40,11 @@
 				var _self = this;
 				//menuData 父组件传来的值，用于显示列表
 				if(typeof _self.menuData === 'object'){
-					_self.menu=_self.menuData;
+					_self.menu = _self.menuData;
 				}else if(typeof _self.menuData === 'string'){
 					$.ajaxSettings.async = false;
 					$.getJSON(_self.menuData,{},function(data){
-					    _self.menu=data;
+					    _self.menu = data;
 					});
 				}
 			}
