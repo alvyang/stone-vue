@@ -29,8 +29,6 @@
 			routePage(path,index){
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				this.$router.push({path:"/"+path});
-				$(".navigation > a").removeClass("nav_active");
-				$(".navigation > a").eq(index).addClass("nav_active");
 			},
 			getNavData(){
 				var _self = this;
@@ -47,22 +45,24 @@
 		background-color:#ffffff;
 		border-bottom:solid 1px #cdcdcd;
 		width:100%;
-		height:80px;
+	    height: 55px;
 		box-sizing: border-box;
-		text-align:center;
+	    padding-right: 50px;
+		text-align:right;
 	}
 	.navigation a{
 		display:inline-block;
 		box-sizing: border-box;
 		width:100px;
-		height:80px;
-		line-height:80px;
+		height:55px;
+		line-height:55px;
 		text-decoration: none;
-		color:#f04046;
 		cursor:pointer;
+		text-align: center;
 	}
-	.nav_active{
+	/*.nav_active{
 		font-weight:bold;
+		color: #f24040;
 		border-bottom: solid 1px #f04646;
-	}
+	}*/
 </style>

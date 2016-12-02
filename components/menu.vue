@@ -20,7 +20,7 @@
 			 * el被新创建的vm.$el替换，并挂载到实例上去之后，调用该钩子
 			 * 设置菜单导航高度
 			 */
-			$(".menu_list").height($(window).height()-80);
+			$(".menu_list").height($(window).height()-55);
 		},
 		watch:{
 			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
@@ -29,16 +29,22 @@
 		},
 		methods:{
 			routePate(path,index){
+				console.log(this.$router.currentRoute);
 				this.$router.push({path:"/comp_lib/"+path});
 				$(".menu_list > li").removeClass("menu_active");
 				$(".menu_list > li").eq(index).addClass("menu_active");
 			},
 			getNavData(){
 				var _self = this;
-				$.ajaxSettings.async = false; 
-				$.getJSON("db/data.json",{},function(data){
-				    _self.menu=data.menu;
-				});
+				//menuData 父组件传来的值，用于显示列表
+				if(typeof _self.menuData === 'object'){
+					_self.menu=_self.menuData;
+				}else if(typeof _self.menuData === 'string'){
+					$.ajaxSettings.async = false;
+					$.getJSON(_self.menuData,{},function(data){
+					    _self.menu=data;
+					});
+				}
 			}
 		}
 	});

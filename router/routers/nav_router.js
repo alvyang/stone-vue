@@ -15,5 +15,6 @@ export default [{
 	component:Comp_lib,
 	children:menuRouter,
 },{
-	path:"/rule",component:Rule
+	path:"/rule",
+	component:Rule
 }]

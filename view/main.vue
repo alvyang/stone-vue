@@ -11,8 +11,8 @@
 			 * el被新创建的vm.$el替换，并挂载到实例上去之后，调用该钩子
 			 * 设置菜单导航高度
 			 */
-			$(".main").height($(window).height()-80);
-			$(".main").css("line-height",$(window).height()-80 + "px");
+			$(".main").height($(window).height()-55);
+			$(".main").css("line-height",$(window).height()-55 + "px");
 		}
 	});
 </script>
