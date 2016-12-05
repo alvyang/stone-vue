@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="navigation">
-			<a v-on:click="routePage(n.id,index)" v-for="(n,index) in nav" :class="{nav_active:index==0}" v-if="n.id!='url'">{{n.name}}</a>
+			<a v-on:click="routePage(n.id,index)" v-for="(n,index) in nav" :class="{nav_active:index==currentIndex}" v-if="n.id!='url'">{{n.name}}</a>
 			<a v-bind:href="n.url" target="_blank" v-else>{{n.name}}</a>
 		</div>
 	</div>
@@ -12,23 +12,27 @@
 		data(){
 			return {
 				nav:[],
-				base:"/",//相对路径，根路径
+				currentIndex:0//当前路由状态
 			}
 		},
 		created(){
 			//组件创建完成后，获取数据  此时的data已经被observed了
 			this.getNavData()
 		},
-		watch:{
-			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
-			'$route' (to, from){
-				
-			}
-		},
 		methods:{
 			routePage(path,index){
+				$(".navigation > a").removeClass("nav_active");
+				$(".navigation > a").eq(index).addClass("nav_active");
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
-				this.$router.push({path:"/"+path});
+				var fullPath = this.$router.currentRoute.fullPath;
+				var index = fullPath.lastIndexOf("/");
+				var base = "";
+				if(index == fullPath.length-1){
+					base = "/";
+				}else{
+					base = fullPath.substring(0,index+1);
+				}
+				this.$router.push({path:base+path});
 			},
 			getNavData(){
 				var _self = this;
@@ -36,6 +40,19 @@
 				$.getJSON("db/data.json",{},function(data){
 				    _self.nav=data.nav;
 				});
+				
+				var fullPath = this.$router.currentRoute.fullPath;
+				var index = fullPath.lastIndexOf("/");
+				//导航选中状态
+				var routePath = fullPath.substring(index+1,fullPath.length);
+				for(let i=0 ; i < _self.nav.length ; i++){
+					if(_self.nav[i].id == routePath){
+						_self.currentIndex = i;
+						break;
+					}else{
+						_self.currentIndex = 0;
+					}
+				}
 			}
 		}
 	});
@@ -43,12 +60,13 @@
 <style>
 	.navigation{
 		background-color:#ffffff;
-		border-bottom:solid 1px #cdcdcd;
+		border-bottom:solid 1px #ffa81d;
 		width:100%;
 	    height: 55px;
 		box-sizing: border-box;
 	    padding-right: 50px;
 		text-align:right;
+		font-size: 14px;
 	}
 	.navigation a{
 		display:inline-block;
@@ -60,9 +78,8 @@
 		cursor:pointer;
 		text-align: center;
 	}
-	/*.nav_active{
-		font-weight:bold;
-		color: #f24040;
-		border-bottom: solid 1px #f04646;
-	}*/
+	.nav_active{
+		color: #ffffff;
+		background-color: #ffa81d;
+	}
 </style>

@@ -61,7 +61,7 @@
 	    -webkit-margin-end: 0px;
 	    -webkit-padding-start: 0px;
 	    width: 180px;
-	    border-right:solid 1px #cdcdcd ;
+	    border-right:solid 1px #d6d6d6 ;
 	}
 	.menu_list li{
 		cursor: pointer;
@@ -69,8 +69,9 @@
 		width: 100%;
 		height: 50px;
 		line-height: 50px;
+		border-bottom: solid 1px #d6d6d6;
 	}
 	.menu_active{
-		background: #464646;
+		background: #ffa81d;
 	}
 </style>
