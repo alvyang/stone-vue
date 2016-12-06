@@ -1,6 +1,6 @@
 <template id="my_menu">
 	<ul class="menu_list">
-		<li v-on:click="routePate(m.id,index)" :class="{menu_active:index==0}" v-for="(m,index) in menu">{{m.name}}</li>
+		<li v-on:click="routePate(m.id,index)" :class="{menu_active:index==currentIndex}" v-for="(m,index) in menu">{{m.name}}</li>
 	</ul>
 </template>
 <script>
@@ -8,7 +8,8 @@
 	export default({
 		data(){
 			return {
-				menu:[]
+				menu:[],
+				currentIndex:0//当前路由状态
 			}
 		},
 		created(){
@@ -25,16 +26,31 @@
 		watch:{
 			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
 			'$route' (to, from) {
-				console.log(from);
-				console.log(to);
+//				console.log(from);
+//				console.log(to);
 			}
 		},
 		methods:{
 			routePate(path,index){
-				//console.log(this.$router.currentRoute);
-				this.$router.push({path:"/comp_lib/"+path});
 				$(".menu_list > li").removeClass("menu_active");
 				$(".menu_list > li").eq(index).addClass("menu_active");
+				
+				//使用router-link 无法动态添加路径，采用编程路由方式实现
+				//使用router-link 无法动态添加路径，采用编程路由方式实现
+				var fullPath = this.$router.currentRoute.fullPath;
+				var toPath ="";
+				if(fullPath.length != 1){//如果路径长度为1，说明为根目录
+					toPath = fullPath + "/" + path;
+				}else{
+					toPath = "/" + path;
+				}
+				for(let i = 0 ; i < this.menu.length ; i++){
+					if(fullPath.includes(this.menu[i].id)){
+						toPath = fullPath.substring(0,fullPath.indexOf(this.menu[i].id)) + path;
+						break;
+					}
+				}
+				this.$router.push({path:toPath});
 			},
 			getNavData(){
 				var _self = this;
@@ -46,6 +62,16 @@
 					$.getJSON(_self.menuData,{},function(data){
 					    _self.menu = data;
 					});
+				}
+				
+				var fullPath = this.$router.currentRoute.fullPath;
+				for(let i=0 ; i < _self.menu.length ; i++){
+					if(fullPath.includes(_self.menu[i].id)){
+						_self.currentIndex = i;
+						break;
+					}else{
+						_self.currentIndex = 0;
+					}
 				}
 			}
 		}

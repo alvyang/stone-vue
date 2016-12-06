@@ -25,14 +25,19 @@
 				$(".navigation > a").eq(index).addClass("nav_active");
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				var fullPath = this.$router.currentRoute.fullPath;
-				var index = fullPath.lastIndexOf("/");
-				var base = "";
-				if(index == fullPath.length-1){
-					base = "/";
+				var toPath = "";
+				if(fullPath.length != 1){//如果路径长度为1，说明为根目录
+					toPath = fullPath + "/" + path;
 				}else{
-					base = fullPath.substring(0,index+1);
+					toPath = "/" + path;
 				}
-				this.$router.push({path:base+path});
+				for(let i = 0 ; i < this.nav.length ; i++){
+					if(fullPath.includes(this.nav[i].id)){
+						toPath = fullPath.substring(0,fullPath.indexOf(this.nav[i].id)) + path;
+						break;
+					}
+				}
+				this.$router.push({path:toPath});
 			},
 			getNavData(){
 				var _self = this;
@@ -42,11 +47,8 @@
 				});
 				
 				var fullPath = this.$router.currentRoute.fullPath;
-				var index = fullPath.lastIndexOf("/");
-				//导航选中状态
-				var routePath = fullPath.substring(index+1,fullPath.length);
 				for(let i=0 ; i < _self.nav.length ; i++){
-					if(_self.nav[i].id == routePath){
+					if(fullPath.includes(_self.nav[i].id)){
 						_self.currentIndex = i;
 						break;
 					}else{

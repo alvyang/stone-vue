@@ -1,11 +1,11 @@
-//引入非组件类界面
-import Form from "view/component_view/form.vue";
-import Button from "view/component_view/button.vue";
-import Other from "view/component_view/other.vue";
-
 //引入表单子路由
 import formRouter from "router/routers/form_router.js";
 
+//引入非组件类界面
+const Other= resolve => require.ensure([], () => r(require('view/component_view/other.vue')), 'group-menu');
+const Button= resolve => require.ensure([], () => r(require('view/component_view/button.vue')), 'group-menu');
+const Form= resolve => require.ensure([], () => r(require('view/component_view/form.vue')), 'group-menu');
+					   
 export default [{
 	path:"",
 	component:Form,

@@ -5,6 +5,7 @@ import Rule from "view/rule.vue";
 
 //组件库类型路由
 import menuRouter from "router/routers/menu_router.js";
+import RuleRouter from "router/routers/rule_router.js";
 
 export default [{
 	path:"/",component:Main
@@ -16,5 +17,6 @@ export default [{
 	children:menuRouter,
 },{
 	path:"/rule",
-	component:Rule
+	component:Rule,
+	children:RuleRouter,
 }]

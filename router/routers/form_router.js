@@ -1,9 +1,9 @@
 //引入所有form表单，vue页面
-import Input from "view/form/input.vue";
-import Checkbox from "view/form/checkbox.vue";
-import Radio from "view/form/radio.vue";
-import Select from "view/form/select.vue";
-import Selects from "view/form/selects.vue";
+const Input= resolve => require.ensure([], () => r(require('view/form/input.vue')), 'group-from');
+const Checkbox= resolve => require.ensure([], () => r(require('view/form/checkbox.vue')), 'group-from');
+const Radio= resolve => require.ensure([], () => r(require('view/form/radio.vue')), 'group-from');
+const Select= resolve => require.ensure([], () => r(require('view/form/select.vue')), 'group-from');
+const Selects= resolve => require.ensure([], () => r(require('view/form/selects.vue')), 'group-from');
 
 export default [{
 	path:'',component:Input

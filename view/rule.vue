@@ -19,7 +19,7 @@
 							"id":"color"
 						},{
 							"name":"字体规范",
-							"id":"button"
+							"id":"font"
 						}]
 						return m;
 					}}
