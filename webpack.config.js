@@ -9,12 +9,13 @@ module.exports = {
     //入口文件输出配置
     output: {
         path: './build',
+        publicPath:'./build/',
         filename: '[name].js'
     },
     module: {
         //加载器配置
         loaders: [{
-        	test: /\.vue$/,loader: 'vue'
+        		test: /\.vue$/,loader: 'vue'
         },{
         	test: /\.css$/,loader: 'style-loader!css-loader'
         },{
