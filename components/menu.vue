@@ -32,9 +32,7 @@
 		},
 		methods:{
 			routePate(path,index){
-				$(".menu_list > li").removeClass("menu_active");
-				$(".menu_list > li").eq(index).addClass("menu_active");
-				
+				this.currentIndex = index;
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				var fullPath = this.$router.currentRoute.fullPath;

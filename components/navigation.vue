@@ -21,8 +21,7 @@
 		},
 		methods:{
 			routePage(path,index){
-				$(".navigation > a").removeClass("nav_active");
-				$(".navigation > a").eq(index).addClass("nav_active");
+				this.currentIndex = index;
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				var fullPath = this.$router.currentRoute.fullPath;
 				var toPath = "";
@@ -45,14 +44,13 @@
 				$.getJSON("db/data.json",{},function(data){
 				    _self.nav=data.nav;
 				});
-				
 				var fullPath = this.$router.currentRoute.fullPath;
-				for(let i=0 ; i < _self.nav.length ; i++){
-					if(fullPath.includes(_self.nav[i].id)){
-						_self.currentIndex = i;
+				for(let i=0 ; i < this.nav.length ; i++){
+					if(fullPath.includes(this.nav[i].id)){
+						this.currentIndex = i;
 						break;
 					}else{
-						_self.currentIndex = 0;
+						this.currentIndex = 0;
 					}
 				}
 			}

@@ -42,7 +42,7 @@
 		display: inline-block;
 		box-sizing: border-box;
 		width: 150px;
-		height: 30px;
+		height: 36px;
 		text-align: center;
 		line-height: 30px;
 		cursor: pointer;

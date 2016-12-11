@@ -38,7 +38,7 @@ module.exports = {
     },
     //其它解决方案配置
     resolve: {
-    	root:[path.join(__dirname)],
+    		root:[path.join(__dirname)],
         extensions: ['', '.js', '.json','.css']
     }
 };

@@ -10371,8 +10371,7 @@
 
 		methods: {
 			routePage: function routePage(path, index) {
-				(0, _jquery2.default)(".navigation > a").removeClass("nav_active");
-				(0, _jquery2.default)(".navigation > a").eq(index).addClass("nav_active");
+				this.currentIndex = index;
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				var fullPath = this.$router.currentRoute.fullPath;
 				var toPath = "";
@@ -10396,14 +10395,13 @@
 				_jquery2.default.getJSON("db/data.json", {}, function (data) {
 					_self.nav = data.nav;
 				});
-
 				var fullPath = this.$router.currentRoute.fullPath;
-				for (var i = 0; i < _self.nav.length; i++) {
-					if (fullPath.includes(_self.nav[i].id)) {
-						_self.currentIndex = i;
+				for (var i = 0; i < this.nav.length; i++) {
+					if (fullPath.includes(this.nav[i].id)) {
+						this.currentIndex = i;
 						break;
 					} else {
-						_self.currentIndex = 0;
+						this.currentIndex = 0;
 					}
 				}
 			}
@@ -23621,9 +23619,7 @@
 		},
 		methods: {
 			routePate: function routePate(path, index) {
-				(0, _jquery2.default)(".menu_list > li").removeClass("menu_active");
-				(0, _jquery2.default)(".menu_list > li").eq(index).addClass("menu_active");
-
+				this.currentIndex = index;
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
 				var fullPath = this.$router.currentRoute.fullPath;
