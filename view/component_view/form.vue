@@ -1,6 +1,6 @@
 <template>
 	<div class="form_nav">
-		<span v-on:click="routePage(fn.path,index)" :class="{sel_active:index==0}" v-for="(fn,index) in formNav" >
+		<span v-on:click="routePage(fn.path,index)" :class="{sel_active:index==currentIndex}" v-for="(fn,index) in formNav" >
 			{{fn.name}}
 		</span>
 		<router-view class="form_tab"></router-view>
@@ -17,18 +17,40 @@
 	export default({
 		data(){
 			return {
-				formNav:formNav
+				formNav:formNav,
+				currentIndex:0,
 			}
 		},
 		mounted(){
-			
+			var fullPath = this.$router.currentRoute.fullPath;
+			console.log(fullPath);
+			for(let i=0 ; i < this.formNav.length ; i++){
+				if(fullPath.includes(this.formNav[i].path)){
+					this.currentIndex = i;
+					break;
+				}else{
+					this.currentIndex = 0;
+				}
+			}
 		},
 		methods:{
 			routePage(path,index){
+				this.currentIndex = index;
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
-				this.$router.push({path:"/comp_lib/form/"+path});
-				$(".form_nav > span").removeClass("sel_active");
-				$(".form_nav > span").eq(index).addClass("sel_active");
+				var fullPath = this.$router.currentRoute.fullPath;
+				var toPath = "";
+				if(fullPath.length != 1){//如果路径长度为1，说明为根目录
+					toPath = fullPath + "/" + path;
+				}else{
+					toPath = "/" + path;
+				}
+				for(let i = 0 ; i < this.formNav.length ; i++){
+					if(fullPath.includes(this.formNav[i].path)){
+						toPath = fullPath.substring(0,fullPath.indexOf(this.formNav[i].id)) + path;
+						break;
+					}
+				}
+				this.$router.push({path:toPath});
 			}
 		}
 	});

@@ -7,7 +7,7 @@
 [iView](https://www.iviewui.com/)			
 
 #目录结构
-> +build	webpack打包后的文件  
+> +build		webpack打包后的文件  
 > +components	项目中用到的公共组件  
 >> -logo	logo组件  
 >> -navigation	导航组件  
@@ -17,6 +17,7 @@
 > +db	项目用到的静态数据和模拟获取数据库json数据  
 > +img	项目全局图片  
 > +js	项目全局js文件  
+> +lib  项目js工具类  
 > +router	路由  
 > +view 非组件类vue界面  
 

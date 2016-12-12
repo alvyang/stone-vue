@@ -10364,11 +10364,25 @@
 				currentIndex: 0 //当前路由状态
 			};
 		},
-		created: function created() {
+		mounted: function mounted() {
 			//组件创建完成后，获取数据  此时的data已经被observed了
 			this.getNavData();
 		},
 
+		watch: {
+			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
+			'$route': function $route(to, from) {
+				var fullPath = to.fullPath;
+				for (var i = 0; i < this.nav.length; i++) {
+					if (fullPath.includes(this.nav[i].id)) {
+						this.currentIndex = i;
+						break;
+					} else {
+						this.currentIndex = 0;
+					}
+				}
+			}
+		},
 		methods: {
 			routePage: function routePage(path, index) {
 				this.currentIndex = index;
@@ -10395,15 +10409,6 @@
 				_jquery2.default.getJSON("db/data.json", {}, function (data) {
 					_self.nav = data.nav;
 				});
-				var fullPath = this.$router.currentRoute.fullPath;
-				for (var i = 0; i < this.nav.length; i++) {
-					if (fullPath.includes(this.nav[i].id)) {
-						this.currentIndex = i;
-						break;
-					} else {
-						this.currentIndex = 0;
-					}
-				}
 			}
 		}
 	}; //
