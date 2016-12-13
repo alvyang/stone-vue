@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<i-input v-bind:alert_message="aData">
+		<i-input v-bind:input-message="aData">
 			<input slot="input_module" placeholder="请输入..."/>			
 		</i-input>
-		<i-input v-bind:alert_message="aData">
+		<i-input v-bind:input-message="aData">
 			<input slot="input_module" placeholder="请输入..."/>			
 		</i-input>
 	</div>

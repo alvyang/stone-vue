@@ -1,19 +1,18 @@
 webpackJsonp([3],{
 
-/***/ 150:
+/***/ 158:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(151)
+	__webpack_require__(159)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(153)
+	__vue_exports__ = __webpack_require__(161)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(154)
+	var __vue_template__ = __webpack_require__(162)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -25,7 +24,7 @@ webpackJsonp([3],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\rule_view\\color.vue"
+	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/view/rule_view/color.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -36,9 +35,9 @@ webpackJsonp([3],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-9ccef57e", __vue_options__)
+	    hotAPI.createRecord("data-v-83a20b44", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-9ccef57e", __vue_options__)
+	    hotAPI.reload("data-v-83a20b44", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] color.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -48,13 +47,13 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 151:
+/***/ 159:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(152);
+	var content = __webpack_require__(160);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(45)(content, {});
@@ -63,8 +62,8 @@ webpackJsonp([3],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-9ccef57e!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./color.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-9ccef57e!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./color.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-83a20b44!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./color.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-83a20b44!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./color.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -75,7 +74,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 152:
+/***/ 160:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(44)();
@@ -90,7 +89,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 153:
+/***/ 161:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -106,35 +105,36 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 154:
+/***/ 162:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){var _vm=this;
-	  return _vm._h('div', ["颜色规范"])
-	},staticRenderFns: []}
+	module.exports={render:function (){with(this) {
+	  return _m(0)
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', ["颜色规范"])
+	}}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-9ccef57e", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-83a20b44", module.exports)
 	  }
 	}
 
 /***/ },
 
-/***/ 155:
+/***/ 163:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(156)
+	__webpack_require__(164)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(158)
+	__vue_exports__ = __webpack_require__(166)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(159)
+	var __vue_template__ = __webpack_require__(167)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -146,7 +146,7 @@ webpackJsonp([3],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\rule_view\\font.vue"
+	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/view/rule_view/font.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -157,9 +157,9 @@ webpackJsonp([3],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-a7697c3e", __vue_options__)
+	    hotAPI.createRecord("data-v-a69995b8", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-a7697c3e", __vue_options__)
+	    hotAPI.reload("data-v-a69995b8", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] font.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -169,13 +169,13 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 156:
+/***/ 164:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(157);
+	var content = __webpack_require__(165);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(45)(content, {});
@@ -184,8 +184,8 @@ webpackJsonp([3],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-a7697c3e!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-a7697c3e!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-a69995b8!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-a69995b8!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -196,7 +196,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 157:
+/***/ 165:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(44)();
@@ -211,7 +211,7 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 158:
+/***/ 166:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -227,16 +227,18 @@ webpackJsonp([3],{
 
 /***/ },
 
-/***/ 159:
+/***/ 167:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){var _vm=this;
-	  return _vm._h('div', ["字体规范"])
-	},staticRenderFns: []}
+	module.exports={render:function (){with(this) {
+	  return _m(0)
+	}},staticRenderFns: [function (){with(this) {
+	  return _h('div', ["字体规范"])
+	}}]}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-a7697c3e", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-a69995b8", module.exports)
 	  }
 	}
 

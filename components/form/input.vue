@@ -2,12 +2,12 @@
 	<div class="input_module_div">
 		<label></label>
 		<slot name="input_module"></slot>
-		<div>{{input_message.s}}</div>
+		<div>{{inputMessage.s}}</div>
 	</div>
 </template>
 <script>
 	export default({
-		props:['input_message'],
+		props:['inputMessage'],
 		methods:{
 			
 		}
