@@ -13,7 +13,7 @@ webpackJsonp([1],{
 	__vue_exports__ = __webpack_require__(127)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(133)
+	var __vue_template__ = __webpack_require__(134)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -103,7 +103,7 @@ webpackJsonp([1],{
 
 	var _input2 = _interopRequireDefault(_input);
 
-	var _validator = __webpack_require__(178);
+	var _validator = __webpack_require__(133);
 
 	var _validator2 = _interopRequireDefault(_validator);
 
@@ -285,6 +285,38 @@ webpackJsonp([1],{
 /***/ },
 
 /***/ 133:
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var elem, data;
+	function inputFocus() {
+		elem.className = "active";
+		data.inputStatus = "focus";
+	}
+	function inputBlur() {
+		elem.className = "error";
+		data.inputStatus = "error";
+	}
+	exports.default = {
+		directives: {
+			validator: {
+				bind: function bind(el, binding, vnode, oldVnode) {
+					elem = el;
+					data = vnode.context.$data.inputMessage[binding.value];
+					el.onfocus = inputFocus;
+					el.onblur = inputBlur;
+				}
+			}
+		}
+	};
+
+/***/ },
+
+/***/ 134:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -313,14 +345,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 134:
+/***/ 135:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(135)
+	var __vue_template__ = __webpack_require__(136)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -355,7 +387,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 135:
+/***/ 136:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -370,14 +402,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 136:
+/***/ 137:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(137)
+	var __vue_template__ = __webpack_require__(138)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -412,7 +444,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 137:
+/***/ 138:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -427,14 +459,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 138:
+/***/ 139:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(139)
+	var __vue_template__ = __webpack_require__(140)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -469,7 +501,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 139:
+/***/ 140:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -484,14 +516,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 140:
+/***/ 141:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(141)
+	var __vue_template__ = __webpack_require__(142)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -526,7 +558,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 141:
+/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -538,33 +570,6 @@ webpackJsonp([1],{
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-13a480c6", module.exports)
 	  }
 	}
-
-/***/ },
-
-/***/ 178:
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	exports.default = {
-		directives: {
-			validator: {
-				bind: function bind(el, binding, vnode, oldVnode) {
-					console.log(el);
-					console.log(binding);
-					console.log(vnode.context.$data);
-					vnode.context.$data.inputMessage[binding.value].error = "没错";
-				}
-			}
-		},
-		methods: {
-			inputFocus: function inputFocus() {},
-			inputBlur: function inputBlur() {}
-		}
-	};
 
 /***/ }
 

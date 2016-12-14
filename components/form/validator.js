@@ -1,20 +1,21 @@
+var elem,data;
+function inputFocus(){
+	elem.className = "active";
+	data.inputStatus = "focus";
+}
+function inputBlur(){
+	elem.className = "error";
+	data.inputStatus = "error";
+}
 export default({
 	directives: {
 	  	validator:{
 	  		bind:function(el,binding,vnode,oldVnode){
-	  			console.log(el);
-	  			console.log(binding);
-	  			console.log(vnode.context.$data);
-	  			vnode.context.$data.inputMessage[binding.value].error = "没错";
+	  			elem = el;
+	  			data = vnode.context.$data.inputMessage[binding.value];
+	  			el.onfocus = inputFocus;
+	  			el.onblur = inputBlur;
 	  		}
 	  	}
-	},
-	methods:{
-		inputFocus(){
-			
-		},
-		inputBlur(){
-			
-		}
 	}
 });
