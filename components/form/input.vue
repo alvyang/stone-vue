@@ -1,16 +1,14 @@
 <template>
 	<div class="input_module_div">
 		<label></label>
-		<slot name="input_module"></slot>
-		<div>{{inputMessage.s}}</div>
+		<slot></slot>
+		<div v-show="inputMessage.inputStatus == 'error'">{{inputMessage.error}}</div>
+		<div v-show="inputMessage.inputStatus == 'focus'">{{inputMessage.focus}}</div>
 	</div>
 </template>
 <script>
 	export default({
-		props:['inputMessage'],
-		methods:{
-			
-		}
+		props:['inputMessage']
 	});
 </script>
 <style>

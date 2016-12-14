@@ -23,7 +23,6 @@
 		},
 		mounted(){
 			var fullPath = this.$router.currentRoute.fullPath;
-			console.log(fullPath);
 			for(let i=0 ; i < this.formNav.length ; i++){
 				if(fullPath.includes(this.formNav[i].path)){
 					this.currentIndex = i;
