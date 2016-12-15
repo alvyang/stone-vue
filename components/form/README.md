@@ -1,6 +1,21 @@
 #前言
 
 #input 组件
+form表单组件中data返回config数组  
+config:[{  
+	label:"用户名",  
+	type:"nonvoid",  
+},{  
+	label:"密码",  
+	type:"",  
+}]  
+type:类型（非必填不传该值）
+nonvoid:(非空)  
+reg:(正则)  
+limit:(区间)  
+equal:(与某个input相等)  
+unique:(不能相同)  
+
 #组件设计原则  
 1.组件中不对html5自字义标签，如：text、placeHolder、maxlength等属性进行二次赋值。  
 2.组件中只提供提示信息、错误信息、输入框样式模板，不对数据做任何处理。  

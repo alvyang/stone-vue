@@ -1,7 +1,13 @@
 <template>
 	<div>
-		<i-input v-bind:input-message="inputMessage[0]">
-			<input placeholder="请输入..." v-validator="0"/>
+		<i-input v-bind:config="config[0]">
+			<input type="text" placeholder="请输入..." v-validator="0"/>
+		</i-input>
+		<i-input v-bind:config="config[1]">
+			<input type="text" placeholder="请输入..." v-validator="1"/>
+		</i-input>
+		<i-input v-bind:config="config[2]">
+			<input type="text" placeholder="请输入..." v-validator="2"/>
 		</i-input>
 	</div>
 </template>
@@ -12,14 +18,15 @@
 	export default({
 		data(){
 			return {
-				inputMessage:[{
-					inputStatus:"error",
-					error:"格式错误",
-					focus:"请输入",
+				config:[{
+					label:"用户名",
+					type:"nonvoid",
 				},{
-					inputStatus:"focus",
-					error:"格式错误",
-					focus:"请输入",
+					label:"密码",
+					type:"",
+				},{
+					label:"确认密码",
+					type:"",
 				}]
 			}
 		},
