@@ -20,8 +20,8 @@ class Validator{
 			money:/^\d{1,}(\.\d{1,2})?$/,
 			realName: /^[\u4e00-\u9fa5 ]{2,10}$/,
 			userName: /^[\w|\d]{4,16}$/,
-    		password: /^[\w!@#$%^&*.]{6,16}$/,
-    		imgCode: /^[0-9a-zA-Z]{4}$/,
+    			password: /^[\w!@#$%^&*.]{6,16}$/,
+    			imgCode: /^[0-9a-zA-Z]{4}$/,
 		    smsCode: /^\d{6}$/,
 		    bankNum: /^\d{10,19}$/,
 		    answer: /^\S+$/,
@@ -30,7 +30,11 @@ class Validator{
 	
 	novoid(){
 		var type = this.config.type || "";
-		
+		if(!type){
+			return true;
+		}
+		this.childData.errorMessage = this.errorMsg.nonvoid;
+		return false;
 	}
 }
 /*
@@ -41,9 +45,15 @@ function focus(v){//获取焦点事件
 	v.childData.status = "focus";
 }
 function blur(v){//失去焦点事件
-	v.el.className = "error";
-	v.novoid();
-	v.childData.status = "error";
+	var type = v.config.type || "";
+	var r = v.novoid();
+	if(r){
+		v.childData.status = "success";
+		v.el.className = "";
+	}else{
+		v.el.className = "error";
+		v.childData.status = "error";
+	}
 }
 export default({
 	directives: {

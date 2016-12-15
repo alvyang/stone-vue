@@ -23,10 +23,9 @@
 					type:"nonvoid",
 				},{
 					label:"密码",
-					type:"",
+					type:"reg",
 				},{
-					label:"确认密码",
-					type:"",
+					label:"确认密码"
 				}]
 			}
 		},

@@ -51,6 +51,7 @@
 	.error_message,.focus_message{
 		/*display: inline-block;这一句提示信息一行显示*/
 		height: 16px;
+		line-height:16px;
 		font-size: 12px;
 	    padding-left: 20px;
 	    margin-left: 90px;
