@@ -6,15 +6,15 @@ class Validator{
 		//获取子组件（也就是form表单组件）data数据
 		this.childData = vnode.context.$children[this.value];
 		this.config = vnode.context.$data.config[this.value];
-		
 		var label = this.config.label;
+		var target = this.config.target || "";
 		this.errorMsg={
 			nonvoid: `${label}不能为空`,
 	        reg: `${label}格式错误`,
 //	        limit: `${name}必须在${ext[0]}与${ext[1]}之间`,
-	        equal: `两次${label}不相同`,
-	        less:`小于`,
-	        greater:`大于`,
+	        equal: `${label}与${target}不相同`,
+	        less:`${label}必须小于${target}`,
+	        greater:`${label}必须大于${target}`,
 	        unique: `${label}重复`,
 		};
 		this.regs={
@@ -60,10 +60,20 @@ class Validator{
 			}
 		}
 		var source = this.vnode.context.$children[i].$el.getElementsByTagName("input")[0].value;
-		if(this.el.value == source){
+		if(this.config.typeValue == "equal" && this.el.value == source	){
+			return true;
+		}else if(this.config.typeValue == "greater" && this.el.value > source	){
+			return true;
+		}else if(this.config.typeValue == "less" && this.el.value < source	){
 			return true;
 		}
-		this.childData.errorMessage = this.errorMsg.equal;
+		if(this.config.typeValue == "equal"){
+			this.childData.errorMessage = this.errorMsg.equal;
+		}else if(this.config.typeValue == "greater"){
+			this.childData.errorMessage = this.errorMsg.greater;
+		}else if(this.config.typeValue == "less"){
+			this.childData.errorMessage = this.errorMsg.less;
+		}
 		return false;
 	}
 	

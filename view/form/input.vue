@@ -25,7 +25,15 @@
 				},{
 					label:"确认密码",
 					type:"compare",
+					typeValue:"equal",
 					target:"密码",
+				},{
+					label:"开始时间"
+				},{
+					label:"结束时间",
+					type:"compare",
+					typeValue:"greater",
+					target:"开始时间",
 				},{
 					label:"备注"
 				}]
