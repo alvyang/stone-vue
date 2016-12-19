@@ -4,6 +4,7 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
 
 	/* styles */
 	__webpack_require__(125)
@@ -24,7 +25,7 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/view/form/input.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\form\\input.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -35,9 +36,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-09af3b26", __vue_options__)
+	    hotAPI.createRecord("data-v-f7f5d320", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-09af3b26", __vue_options__)
+	    hotAPI.reload("data-v-f7f5d320", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] input.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -62,8 +63,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-09af3b26!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-09af3b26!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f7f5d320!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f7f5d320!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -159,6 +160,7 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
 
 	/* styles */
 	__webpack_require__(129)
@@ -179,7 +181,7 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/components/form/input.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\components\\form\\input.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -190,9 +192,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-1db32e48", __vue_options__)
+	    hotAPI.createRecord("data-v-775b92c2", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-1db32e48", __vue_options__)
+	    hotAPI.reload("data-v-775b92c2", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] input.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -217,8 +219,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1db32e48!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1db32e48!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-775b92c2!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-775b92c2!./../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./input.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -291,41 +293,41 @@ webpackJsonp([1],{
 /***/ 134:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){with(this) {
-	  return _h('div', {
+	module.exports={render:function (){var _vm=this;
+	  return _vm._h('div', {
 	    staticClass: "input_module_div"
-	  }, [_h('label', [_s(config.label)]), " ", _t("default"), _h('img', {
+	  }, [_vm._h('label', [_vm._s(_vm.config.label)]), " ", _vm._t("default"), _vm._h('img', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (status == 'success'),
+	      value: (_vm.status == 'success'),
 	      expression: "status == 'success'"
 	    }],
 	    attrs: {
 	      "src": __webpack_require__(135)
 	    }
-	  }), " ", _h('div', {
+	  }), " ", _vm._h('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (status == 'error'),
+	      value: (_vm.status == 'error'),
 	      expression: "status == 'error'"
 	    }],
 	    staticClass: "error_message"
-	  }, [_s(errorMessage)]), " ", _h('div', {
+	  }, [_vm._s(_vm.errorMessage)]), " ", _vm._h('div', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (status == 'focus'),
+	      value: (_vm.status == 'focus'),
 	      expression: "status == 'focus'"
 	    }],
 	    staticClass: "focus_message"
-	  }, ["请输入" + _s(config.label)])])
-	}},staticRenderFns: []}
+	  }, ["请输入" + _vm._s(_vm.config.label)])])
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1db32e48", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-775b92c2", module.exports)
 	  }
 	}
 
@@ -430,7 +432,12 @@ webpackJsonp([1],{
 						break;
 					}
 				}
+				//获取要比较的值
 				var source = this.vnode.context.$children[i].$el.getElementsByTagName("input")[0].value;
+				if (!source) {
+					//如果要比较的目标值不存在,则验证通过
+					return true;
+				}
 				if (this.config.typeValue == "equal" && this.el.value == source) {
 					return true;
 				} else if (this.config.typeValue == "greater" && this.el.value > source) {
@@ -465,7 +472,7 @@ webpackJsonp([1],{
 		var type = v.config.type || "";
 		if (!type) {
 			//配置信息中,无type,说明非必填
-			v.childData.status = "";
+			v.childData.status = "success";
 			v.el.className = "";
 			return;
 		}
@@ -574,13 +581,13 @@ webpackJsonp([1],{
 /***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){with(this) {
-	  return _h('div', [_l((config), function(c, index) {
-	    return _h('i-input', {
+	module.exports={render:function (){var _vm=this;
+	  return _vm._h('div', [_vm._l((_vm.config), function(c, index) {
+	    return _vm._h('i-input', {
 	      attrs: {
 	        "config": c
 	      }
-	    }, [_h('input', {
+	    }, [_vm._h('input', {
 	      directives: [{
 	        name: "validator",
 	        rawName: "v-validator",
@@ -593,11 +600,11 @@ webpackJsonp([1],{
 	      }
 	    })])
 	  })])
-	}},staticRenderFns: []}
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-09af3b26", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-f7f5d320", module.exports)
 	  }
 	}
 
@@ -607,6 +614,7 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
 
 	/* template */
 	var __vue_template__ = __webpack_require__(144)
@@ -621,7 +629,7 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/view/form/checkbox.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\form\\checkbox.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -632,9 +640,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-15da7020", __vue_options__)
+	    hotAPI.createRecord("data-v-7eea1de6", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-15da7020", __vue_options__)
+	    hotAPI.reload("data-v-7eea1de6", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] checkbox.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -647,15 +655,13 @@ webpackJsonp([1],{
 /***/ 144:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){with(this) {
-	  return _m(0)
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', ["checkbox"])
-	}}]}
+	module.exports={render:function (){var _vm=this;
+	  return _vm._h('div', ["checkbox"])
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-15da7020", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7eea1de6", module.exports)
 	  }
 	}
 
@@ -665,6 +671,7 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
 
 	/* template */
 	var __vue_template__ = __webpack_require__(146)
@@ -679,7 +686,7 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/view/form/radio.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\form\\radio.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -690,9 +697,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5b959e1e", __vue_options__)
+	    hotAPI.createRecord("data-v-371b5bbe", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-5b959e1e", __vue_options__)
+	    hotAPI.reload("data-v-371b5bbe", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] radio.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -705,15 +712,13 @@ webpackJsonp([1],{
 /***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){with(this) {
-	  return _m(0)
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', ["radio"])
-	}}]}
+	module.exports={render:function (){var _vm=this;
+	  return _vm._h('div', ["radio"])
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5b959e1e", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-371b5bbe", module.exports)
 	  }
 	}
 
@@ -723,6 +728,7 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
 
 	/* template */
 	var __vue_template__ = __webpack_require__(148)
@@ -737,7 +743,7 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/view/form/select.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\form\\select.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -748,9 +754,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-91ad442e", __vue_options__)
+	    hotAPI.createRecord("data-v-49e32a46", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-91ad442e", __vue_options__)
+	    hotAPI.reload("data-v-49e32a46", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] select.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -763,15 +769,13 @@ webpackJsonp([1],{
 /***/ 148:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){with(this) {
-	  return _m(0)
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', ["select"])
-	}}]}
+	module.exports={render:function (){var _vm=this;
+	  return _vm._h('div', ["select"])
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-91ad442e", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-49e32a46", module.exports)
 	  }
 	}
 
@@ -781,6 +785,7 @@ webpackJsonp([1],{
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
 
 	/* template */
 	var __vue_template__ = __webpack_require__(150)
@@ -795,7 +800,7 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/stone-vue/view/form/selects.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\form\\selects.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -806,9 +811,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-31ae005a", __vue_options__)
+	    hotAPI.createRecord("data-v-13a480c6", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-31ae005a", __vue_options__)
+	    hotAPI.reload("data-v-13a480c6", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] selects.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -821,15 +826,13 @@ webpackJsonp([1],{
 /***/ 150:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports={render:function (){with(this) {
-	  return _m(0)
-	}},staticRenderFns: [function (){with(this) {
-	  return _h('div', ["selects"])
-	}}]}
+	module.exports={render:function (){var _vm=this;
+	  return _vm._h('div', ["selects"])
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-31ae005a", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-13a480c6", module.exports)
 	  }
 	}
 

@@ -59,7 +59,11 @@ class Validator{
 				break;
 			}
 		}
+		//获取要比较的值
 		var source = this.vnode.context.$children[i].$el.getElementsByTagName("input")[0].value;
+		if(!source){//如果要比较的目标值不存在,则验证通过
+			return true;
+		}
 		if(this.config.typeValue == "equal" && this.el.value == source	){
 			return true;
 		}else if(this.config.typeValue == "greater" && this.el.value > source	){
@@ -88,7 +92,7 @@ function focus(v){//获取焦点事件
 function blur(v){//失去焦点事件
 	var type = v.config.type || "";
 	if(!type){//配置信息中,无type,说明非必填
-		v.childData.status = "";
+		v.childData.status = "success";
 		v.el.className = "";
 		return;
 	}
