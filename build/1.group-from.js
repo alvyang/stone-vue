@@ -13,7 +13,7 @@ webpackJsonp([1],{
 	__vue_exports__ = __webpack_require__(127)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(142)
+	var __vue_template__ = __webpack_require__(137)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -83,7 +83,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -116,6 +116,7 @@ webpackJsonp([1],{
 	//
 	//
 	//
+	//
 
 	exports.default = {
 		data: function data() {
@@ -129,7 +130,8 @@ webpackJsonp([1],{
 					typeValue: "phone"
 				}, {
 					label: "密码",
-					type: "nonvoid"
+					type: "limit",
+					typeValue: [2, 6]
 				}, {
 					label: "确认密码",
 					type: "compare",
@@ -349,11 +351,15 @@ webpackJsonp([1],{
 		value: true
 	});
 
-	var _classCallCheck2 = __webpack_require__(137);
+	var _typeof2 = __webpack_require__(93);
+
+	var _typeof3 = _interopRequireDefault(_typeof2);
+
+	var _classCallCheck2 = __webpack_require__(172);
 
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-	var _createClass2 = __webpack_require__(138);
+	var _createClass2 = __webpack_require__(173);
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
@@ -371,14 +377,14 @@ webpackJsonp([1],{
 			this.config = vnode.context.$data.config[this.value];
 			var label = this.config.label;
 			var target = this.config.target || "";
+			var limit = (0, _typeof3.default)(this.config.typeValue) == "object" ? this.config.typeValue : [];
 			this.errorMsg = {
 				nonvoid: label + "\u4E0D\u80FD\u4E3A\u7A7A",
 				reg: label + "\u683C\u5F0F\u9519\u8BEF",
-				//	        limit: `${name}必须在${ext[0]}与${ext[1]}之间`,
+				limit: label + "\u957F\u5EA6\u5FC5\u987B\u5728" + limit[0] + "\u4E0E" + limit[1] + "\u4E4B\u95F4",
 				equal: label + "\u4E0E" + target + "\u4E0D\u76F8\u540C",
 				less: label + "\u5FC5\u987B\u5C0F\u4E8E" + target,
-				greater: label + "\u5FC5\u987B\u5927\u4E8E" + target,
-				unique: label + "\u91CD\u590D"
+				greater: label + "\u5FC5\u987B\u5927\u4E8E" + target
 			};
 			this.regs = {
 				phone: /^1[3|4|5|7|8]\d{9}$/,
@@ -454,6 +460,20 @@ webpackJsonp([1],{
 				}
 				return false;
 			}
+			//比较区间
+
+		}, {
+			key: "limit",
+			value: function limit() {
+				var len = this.el.value.length;
+				var min = this.config.typeValue[0];
+				var max = this.config.typeValue[1];
+				if (len >= min && len <= max) {
+					return true;
+				}
+				this.childData.errorMessage = this.errorMsg.limit;
+				return false;
+			}
 		}]);
 		return Validator;
 	}();
@@ -486,6 +506,11 @@ webpackJsonp([1],{
 		}
 	}
 	exports.default = {
+		methods: {
+			submitCheck: function submitCheck() {
+				console.log("submit-check");
+			}
+		},
 		directives: {
 			validator: {
 				bind: function bind(el, binding, vnode, oldVnode) {
@@ -504,81 +529,6 @@ webpackJsonp([1],{
 /***/ },
 
 /***/ 137:
-/***/ function(module, exports) {
-
-	"use strict";
-
-	exports.__esModule = true;
-
-	exports.default = function (instance, Constructor) {
-	  if (!(instance instanceof Constructor)) {
-	    throw new TypeError("Cannot call a class as a function");
-	  }
-	};
-
-/***/ },
-
-/***/ 138:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	exports.__esModule = true;
-
-	var _defineProperty = __webpack_require__(139);
-
-	var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function () {
-	  function defineProperties(target, props) {
-	    for (var i = 0; i < props.length; i++) {
-	      var descriptor = props[i];
-	      descriptor.enumerable = descriptor.enumerable || false;
-	      descriptor.configurable = true;
-	      if ("value" in descriptor) descriptor.writable = true;
-	      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
-	    }
-	  }
-
-	  return function (Constructor, protoProps, staticProps) {
-	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-	    if (staticProps) defineProperties(Constructor, staticProps);
-	    return Constructor;
-	  };
-	}();
-
-/***/ },
-
-/***/ 139:
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(140), __esModule: true };
-
-/***/ },
-
-/***/ 140:
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(141);
-	var $Object = __webpack_require__(7).Object;
-	module.exports = function defineProperty(it, key, desc){
-	  return $Object.defineProperty(it, key, desc);
-	};
-
-/***/ },
-
-/***/ 141:
-/***/ function(module, exports, __webpack_require__) {
-
-	var $export = __webpack_require__(5);
-	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-	$export($export.S + $export.F * !__webpack_require__(15), 'Object', {defineProperty: __webpack_require__(11).f});
-
-/***/ },
-
-/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -599,7 +549,11 @@ webpackJsonp([1],{
 	        "placeholder": "请输入..."
 	      }
 	    })])
-	  })])
+	  }), " ", _vm._h('button', {
+	    on: {
+	      "click": _vm.submitCheck
+	    }
+	  }, ["提交检验"])])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -610,14 +564,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 143:
+/***/ 138:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(144)
+	var __vue_template__ = __webpack_require__(139)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -652,7 +606,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 144:
+/***/ 139:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -667,14 +621,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 145:
+/***/ 140:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(146)
+	var __vue_template__ = __webpack_require__(141)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -709,7 +663,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 146:
+/***/ 141:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -724,14 +678,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 147:
+/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(148)
+	var __vue_template__ = __webpack_require__(143)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -766,7 +720,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 148:
+/***/ 143:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -781,14 +735,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 149:
+/***/ 144:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(150)
+	var __vue_template__ = __webpack_require__(145)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -823,7 +777,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 150:
+/***/ 145:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -835,6 +789,81 @@ webpackJsonp([1],{
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-13a480c6", module.exports)
 	  }
 	}
+
+/***/ },
+
+/***/ 172:
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	exports.default = function (instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	};
+
+/***/ },
+
+/***/ 173:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _defineProperty = __webpack_require__(174);
+
+	var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];
+	      descriptor.enumerable = descriptor.enumerable || false;
+	      descriptor.configurable = true;
+	      if ("value" in descriptor) descriptor.writable = true;
+	      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
+	    }
+	  }
+
+	  return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+	    if (staticProps) defineProperties(Constructor, staticProps);
+	    return Constructor;
+	  };
+	}();
+
+/***/ },
+
+/***/ 174:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(175), __esModule: true };
+
+/***/ },
+
+/***/ 175:
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(176);
+	var $Object = __webpack_require__(7).Object;
+	module.exports = function defineProperty(it, key, desc){
+	  return $Object.defineProperty(it, key, desc);
+	};
+
+/***/ },
+
+/***/ 176:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $export = __webpack_require__(5);
+	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+	$export($export.S + $export.F * !__webpack_require__(15), 'Object', {defineProperty: __webpack_require__(11).f});
 
 /***/ }
 

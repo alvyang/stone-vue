@@ -8,14 +8,14 @@ class Validator{
 		this.config = vnode.context.$data.config[this.value];
 		var label = this.config.label;
 		var target = this.config.target || "";
+		var limit =typeof this.config.typeValue == "object"? this.config.typeValue : [];
 		this.errorMsg={
 			nonvoid: `${label}不能为空`,
 	        reg: `${label}格式错误`,
-//	        limit: `${name}必须在${ext[0]}与${ext[1]}之间`,
+	        limit: `${label}长度必须在${limit[0]}与${limit[1]}之间`,
 	        equal: `${label}与${target}不相同`,
 	        less:`${label}必须小于${target}`,
 	        greater:`${label}必须大于${target}`,
-	        unique: `${label}重复`,
 		};
 		this.regs={
 			phone:/^1[3|4|5|7|8]\d{9}$/,
@@ -80,7 +80,17 @@ class Validator{
 		}
 		return false;
 	}
-	
+	//比较区间
+	limit(){
+		var len = this.el.value.length;
+		var min = this.config.typeValue[0];
+		var max = this.config.typeValue[1];
+		if(len >= min && len <= max){
+			return true;
+		}
+		this.childData.errorMessage = this.errorMsg.limit;
+		return false;
+	}
 }
 /*
  * 以下两个方法用于监听表单的focus blur事件，参数validator对象
@@ -106,6 +116,11 @@ function blur(v){//失去焦点事件
 	}
 }
 export default({
+	methods:{
+		submitCheck(){
+			console.log("submit-check");
+		}
+	},
 	directives: {
 	  	validator:{
 	  		bind:function(el,binding,vnode,oldVnode){

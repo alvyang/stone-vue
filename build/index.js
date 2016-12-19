@@ -23629,7 +23629,7 @@
 
 	var _menu_router2 = _interopRequireDefault(_menu_router);
 
-	var _rule_router = __webpack_require__(166);
+	var _rule_router = __webpack_require__(161);
 
 	var _rule_router2 = _interopRequireDefault(_rule_router);
 
@@ -24883,18 +24883,18 @@
 	//引入非组件类界面
 	var Other = function Other(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(151));
+			return resolve(__webpack_require__(146));
 		});
 	}; //引入表单子路由
 
 	var Button = function Button(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(156));
+			return resolve(__webpack_require__(151));
 		});
 	};
 	var Form = function Form(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(161));
+			return resolve(__webpack_require__(156));
 		});
 	};
 
@@ -24929,22 +24929,22 @@
 	};
 	var Checkbox = function Checkbox(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(143));
+			return resolve(__webpack_require__(138));
 		});
 	};
 	var Radio = function Radio(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(145));
+			return resolve(__webpack_require__(140));
 		});
 	};
 	var Select = function Select(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(147));
+			return resolve(__webpack_require__(142));
 		});
 	};
 	var Selects = function Selects(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(149));
+			return resolve(__webpack_require__(144));
 		});
 	};
 
@@ -25000,12 +25000,7 @@
 /* 158 */,
 /* 159 */,
 /* 160 */,
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */
+/* 161 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25016,12 +25011,12 @@
 	//引入所有form表单，vue页面
 	var Color = function Color(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
-			return resolve(__webpack_require__(167));
+			return resolve(__webpack_require__(162));
 		});
 	};
 	var Font = function Font(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
-			return resolve(__webpack_require__(172));
+			return resolve(__webpack_require__(167));
 		});
 	};
 

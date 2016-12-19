@@ -3,6 +3,7 @@
 		<i-input v-bind:config="c" v-for="(c,index) in config">
 			<input type="text" placeholder="请输入..." v-validator="index"/>
 		</i-input>
+		<button @click="submitCheck">提交检验</button>
 	</div>
 </template>
 <script>
@@ -21,7 +22,8 @@
 					typeValue:"phone",
 				},{
 					label:"密码",
-					type:"nonvoid"
+					type:"limit",
+					typeValue:[2,6]
 				},{
 					label:"确认密码",
 					type:"compare",
