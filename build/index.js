@@ -24897,6 +24897,11 @@
 			return resolve(__webpack_require__(161));
 		});
 	};
+	var Validator = function Validator(resolve) {
+		return __webpack_require__.e/* nsure */(2, function () {
+			return resolve(__webpack_require__(177));
+		});
+	};
 
 	exports.default = [{
 		path: "",
@@ -24910,6 +24915,8 @@
 		path: "button", component: Button
 	}, {
 		path: "other", component: Other
+	}, {
+		path: "validator", component: Validator
 	}];
 
 /***/ },

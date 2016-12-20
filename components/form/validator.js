@@ -16,13 +16,14 @@ class Validator{
 	        equal: `${label}与${target}不相同`,
 	        less:`${label}必须小于${target}`,
 	        greater:`${label}必须大于${target}`,
+	        lessEquql:`${label}必须小于等于${target}`,
+	        greaterEqual:`${label}必须大于等于${target}`,
 		};
 		this.regs={
 			phone:/^1[3|4|5|7|8]\d{9}$/,
 			email:/^(\w)+(\.\w+)*@([\w-])+((\.\w+)+)$/g,
 			money:/^\d{1,}(\.\d{1,2})?$/,
 			realName: /^[\u4e00-\u9fa5 ]{2,10}$/,
-			userName: /^[\w|\d]{4,16}$/,
 			password: /^[\w!@#$%^&*.]{6,16}$/,
 			imgCode: /^[0-9a-zA-Z]{4}$/,
 		    smsCode: /^\d{6}$/,
@@ -70,13 +71,22 @@ class Validator{
 			return true;
 		}else if(this.config.typeValue == "less" && this.el.value < source	){
 			return true;
+		}else if(this.config.typeValue == "less-equql" && this.el.value <= source	){
+			return true;
+		}else if(this.config.typeValue == "greater-equal" && this.el.value >= source	){
+			return true;
 		}
+		
 		if(this.config.typeValue == "equal"){
 			this.childData.errorMessage = this.errorMsg.equal;
 		}else if(this.config.typeValue == "greater"){
 			this.childData.errorMessage = this.errorMsg.greater;
 		}else if(this.config.typeValue == "less"){
 			this.childData.errorMessage = this.errorMsg.less;
+		}else if(this.config.typeValue == "less-equql"){
+			this.childData.errorMessage = this.errorMsg.lessEquql;
+		}else if(this.config.typeValue == "greater-equal"){
+			this.childData.errorMessage = this.errorMsg.greaterEqual;
 		}
 		return false;
 	}

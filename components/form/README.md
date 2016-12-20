@@ -25,10 +25,10 @@ form表单组件中data返回config数组,数组每一项可配置属性：
 	- compare:比较验证  
 	- limit:区间限制
 *	typeValue:不同的type值，设置不同的typeValue值  
-	1. type为reg时，typeValue包含以下属性  
-    phone（手机号码）、email（邮箱）等。也可以直接配置正则表达式  
-    2. type为compare时，typeValue包含以下属性  
-    equal（相等）、less（小于）、greater（大于）  
-    3. type为limit时，typeValue为数组，第一个值为最小值，第二个值为最大值  
+	- type为reg时，typeValue包含以下属性  
+    phone（手机号码）、email（邮箱）、realName（真实姓名）、password（密码）或直接传入正则表达式  
+    - type为compare时，typeValue包含以下属性  
+    equal（相等）、less（小于）、greater（大于）、less-equql（小于等于）、greater-equal（大于等于）  
+    - type为limit时，typeValue为数组，第一个值为最小值，第二个值为最大值  
 *	target:当type为compare时配置，该值为对应表单的tabel值
 

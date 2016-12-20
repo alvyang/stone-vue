@@ -83,7 +83,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -103,58 +103,27 @@ webpackJsonp([1],{
 
 	var _input2 = _interopRequireDefault(_input);
 
-	var _validator = __webpack_require__(136);
-
-	var _validator2 = _interopRequireDefault(_validator);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	exports.default = {
 		data: function data() {
 			return {
-				config: [{
-					label: "用户名",
-					type: "nonvoid"
-				}, {
-					label: "手机号码",
-					type: "reg",
-					typeValue: "phone"
-				}, {
-					label: "密码",
-					type: "limit",
-					typeValue: [2, 6]
-				}, {
-					label: "确认密码",
-					type: "compare",
-					typeValue: "equal",
-					target: "密码"
-				}, {
-					label: "开始时间"
-				}, {
-					label: "结束时间",
-					type: "compare",
-					typeValue: "greater",
-					target: "开始时间"
-				}, {
-					label: "备注"
-				}]
+				config: {
+					label: "用户名"
+				}
 			};
 		},
 
-		mixins: [_validator2.default],
 		components: {
 			'i-input': _input2.default
 		}
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ },
 
@@ -342,299 +311,20 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 136:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _typeof2 = __webpack_require__(93);
-
-	var _typeof3 = _interopRequireDefault(_typeof2);
-
-	var _classCallCheck2 = __webpack_require__(137);
-
-	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
-
-	var _createClass2 = __webpack_require__(138);
-
-	var _createClass3 = _interopRequireDefault(_createClass2);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Validator = function () {
-		function Validator(el, vnode, value) {
-			(0, _classCallCheck3.default)(this, Validator);
-
-			this.el = el;
-			this.value = value;
-			this.vnode = vnode;
-			//获取子组件（也就是form表单组件）data数据
-			this.childData = vnode.context.$children[this.value];
-			this.config = vnode.context.$data.config[this.value];
-			var label = this.config.label;
-			var target = this.config.target || "";
-			var limit = (0, _typeof3.default)(this.config.typeValue) == "object" ? this.config.typeValue : [];
-			this.errorMsg = {
-				nonvoid: label + "\u4E0D\u80FD\u4E3A\u7A7A",
-				reg: label + "\u683C\u5F0F\u9519\u8BEF",
-				limit: label + "\u957F\u5EA6\u5FC5\u987B\u5728" + limit[0] + "\u4E0E" + limit[1] + "\u4E4B\u95F4",
-				equal: label + "\u4E0E" + target + "\u4E0D\u76F8\u540C",
-				less: label + "\u5FC5\u987B\u5C0F\u4E8E" + target,
-				greater: label + "\u5FC5\u987B\u5927\u4E8E" + target
-			};
-			this.regs = {
-				phone: /^1[3|4|5|7|8]\d{9}$/,
-				email: /^(\w)+(\.\w+)*@([\w-])+((\.\w+)+)$/g,
-				money: /^\d{1,}(\.\d{1,2})?$/,
-				realName: /^[\u4e00-\u9fa5 ]{2,10}$/,
-				userName: /^[\w|\d]{4,16}$/,
-				password: /^[\w!@#$%^&*.]{6,16}$/,
-				imgCode: /^[0-9a-zA-Z]{4}$/,
-				smsCode: /^\d{6}$/,
-				bankNum: /^\d{10,19}$/,
-				answer: /^\S+$/
-			};
-		}
-		//非空验证
-
-
-		(0, _createClass3.default)(Validator, [{
-			key: "nonvoid",
-			value: function nonvoid() {
-				var vaData = this.el.value;
-				if (vaData) {
-					return true;
-				}
-				this.childData.errorMessage = this.errorMsg.nonvoid;
-				return false;
-			}
-			//正则验证
-
-		}, {
-			key: "reg",
-			value: function reg() {
-				var vaData = this.el.value;
-				var typeValue = this.config.typeValue;
-				var regex = typeof typeValue == "string" ? this.regs[typeValue] : typeValue;
-				if (vaData.match(regex)) {
-					return true;
-				}
-				this.childData.errorMessage = this.errorMsg.reg;
-				return false;
-			}
-			//比较验证
-
-		}, {
-			key: "compare",
-			value: function compare() {
-				var config = this.vnode.context.$data.config;
-				var target = this.config.target;
-				for (var i = 0; i < config.length; i++) {
-					if (config[i].label == target) {
-						break;
-					}
-				}
-				//获取要比较的值
-				var source = this.vnode.context.$children[i].$el.getElementsByTagName("input")[0].value;
-				if (!source) {
-					//如果要比较的目标值不存在,则验证通过
-					return true;
-				}
-				if (this.config.typeValue == "equal" && this.el.value == source) {
-					return true;
-				} else if (this.config.typeValue == "greater" && this.el.value > source) {
-					return true;
-				} else if (this.config.typeValue == "less" && this.el.value < source) {
-					return true;
-				}
-				if (this.config.typeValue == "equal") {
-					this.childData.errorMessage = this.errorMsg.equal;
-				} else if (this.config.typeValue == "greater") {
-					this.childData.errorMessage = this.errorMsg.greater;
-				} else if (this.config.typeValue == "less") {
-					this.childData.errorMessage = this.errorMsg.less;
-				}
-				return false;
-			}
-			//比较区间
-
-		}, {
-			key: "limit",
-			value: function limit() {
-				var len = this.el.value.length;
-				var min = this.config.typeValue[0];
-				var max = this.config.typeValue[1];
-				if (len >= min && len <= max) {
-					return true;
-				}
-				this.childData.errorMessage = this.errorMsg.limit;
-				return false;
-			}
-		}]);
-		return Validator;
-	}();
-	/*
-	 * 以下两个方法用于监听表单的focus blur事件，参数validator对象
-	 */
-
-
-	function focus(v) {
-		//获取焦点事件
-		v.el.className = "active";
-		v.childData.status = "focus";
-	}
-	function blur(v) {
-		//失去焦点事件
-		var type = v.config.type || "";
-		if (!type) {
-			//配置信息中,无type,说明非必填
-			v.childData.status = "success";
-			v.el.className = "";
-			return;
-		}
-		var r = v[type]();
-		if (r) {
-			v.childData.status = "success";
-			v.el.className = "";
-		} else {
-			v.el.className = "error";
-			v.childData.status = "error";
-		}
-	}
-	exports.default = {
-		methods: {
-			submitCheck: function submitCheck() {
-				var f = this.$children;
-				for (var i = 0; i < f.length; i++) {
-					console.log(f[i].$vnode);
-					var c = f[i].$el.getElementsByTagName("input")[0];
-					var v = new Validator(c, f[i].$vnode, i);
-					blur(v);
-				}
-			}
-		},
-		directives: {
-			validator: {
-				bind: function bind(el, binding, vnode, oldVnode) {
-					var v = new Validator(el, vnode, binding.value);
-					el.onfocus = function () {
-						focus(v);
-					};
-					el.onblur = function () {
-						blur(v);
-					};
-				}
-			}
-		}
-	};
-
-/***/ },
-
-/***/ 137:
-/***/ function(module, exports) {
-
-	"use strict";
-
-	exports.__esModule = true;
-
-	exports.default = function (instance, Constructor) {
-	  if (!(instance instanceof Constructor)) {
-	    throw new TypeError("Cannot call a class as a function");
-	  }
-	};
-
-/***/ },
-
-/***/ 138:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	exports.__esModule = true;
-
-	var _defineProperty = __webpack_require__(139);
-
-	var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function () {
-	  function defineProperties(target, props) {
-	    for (var i = 0; i < props.length; i++) {
-	      var descriptor = props[i];
-	      descriptor.enumerable = descriptor.enumerable || false;
-	      descriptor.configurable = true;
-	      if ("value" in descriptor) descriptor.writable = true;
-	      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
-	    }
-	  }
-
-	  return function (Constructor, protoProps, staticProps) {
-	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-	    if (staticProps) defineProperties(Constructor, staticProps);
-	    return Constructor;
-	  };
-	}();
-
-/***/ },
-
-/***/ 139:
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(140), __esModule: true };
-
-/***/ },
-
-/***/ 140:
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(141);
-	var $Object = __webpack_require__(7).Object;
-	module.exports = function defineProperty(it, key, desc){
-	  return $Object.defineProperty(it, key, desc);
-	};
-
-/***/ },
-
-/***/ 141:
-/***/ function(module, exports, __webpack_require__) {
-
-	var $export = __webpack_require__(5);
-	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-	$export($export.S + $export.F * !__webpack_require__(15), 'Object', {defineProperty: __webpack_require__(11).f});
-
-/***/ },
-
 /***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
-	  return _vm._h('div', [_vm._l((_vm.config), function(c, index) {
-	    return _vm._h('i-input', {
-	      attrs: {
-	        "config": c
-	      }
-	    }, [_vm._h('input', {
-	      directives: [{
-	        name: "validator",
-	        rawName: "v-validator",
-	        value: (index),
-	        expression: "index"
-	      }],
-	      attrs: {
-	        "type": "text",
-	        "placeholder": "请输入..."
-	      }
-	    })])
-	  }), " ", _vm._h('button', {
-	    on: {
-	      "click": _vm.submitCheck
+	  return _vm._h('div', [_vm._h('i-input', {
+	    attrs: {
+	      "config": _vm.config
 	    }
-	  }, ["提交检验"])])
+	  }, [_vm._h('input', {
+	    attrs: {
+	      "type": "text",
+	      "placeholder": "请输入..."
+	    }
+	  })])])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
