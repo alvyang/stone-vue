@@ -15,6 +15,7 @@
 引入文件  
 > import validator from "components/form/validator.js";  
 > mixins: [validator]  
+
 配置规则  
 form表单组件中data返回config数组,数组每一项可配置属性：  
 *	label:表单元素前的名称（必填）    
