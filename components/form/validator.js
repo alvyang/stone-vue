@@ -1,14 +1,14 @@
 class Validator{
-	constructor(el,vnode,binding){
+	constructor(el,vnode,value){
 		this.el = el;
-		this.value = binding.value;
+		this.value = value;
 		this.vnode = vnode;
 		//获取子组件（也就是form表单组件）data数据
 		this.childData = vnode.context.$children[this.value];
 		this.config = vnode.context.$data.config[this.value];
 		var label = this.config.label;
 		var target = this.config.target || "";
-		var limit =typeof this.config.typeValue == "object"? this.config.typeValue : [];
+		var limit = typeof this.config.typeValue == "object"? this.config.typeValue : [];
 		this.errorMsg={
 			nonvoid: `${label}不能为空`,
 	        reg: `${label}格式错误`,
@@ -118,13 +118,19 @@ function blur(v){//失去焦点事件
 export default({
 	methods:{
 		submitCheck(){
-			console.log("submit-check");
+			var f = this.$children;
+			for(var i = 0 ; i < f.length ;i++){
+				console.log(f[i].$vnode);
+				var c = f[i].$el.getElementsByTagName("input")[0];
+				var v = new Validator(c,f[i].$vnode,i);
+				blur(v);
+			}
 		}
 	},
 	directives: {
 	  	validator:{
 	  		bind:function(el,binding,vnode,oldVnode){
-	  			var v = new Validator(el,vnode,binding);
+	  			var v = new Validator(el,vnode,binding.value);
 	  			el.onfocus = function(){
 	  				focus(v);
 	  			};

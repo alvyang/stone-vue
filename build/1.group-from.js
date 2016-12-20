@@ -13,7 +13,7 @@ webpackJsonp([1],{
 	__vue_exports__ = __webpack_require__(127)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(137)
+	var __vue_template__ = __webpack_require__(142)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -355,22 +355,22 @@ webpackJsonp([1],{
 
 	var _typeof3 = _interopRequireDefault(_typeof2);
 
-	var _classCallCheck2 = __webpack_require__(172);
+	var _classCallCheck2 = __webpack_require__(137);
 
 	var _classCallCheck3 = _interopRequireDefault(_classCallCheck2);
 
-	var _createClass2 = __webpack_require__(173);
+	var _createClass2 = __webpack_require__(138);
 
 	var _createClass3 = _interopRequireDefault(_createClass2);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Validator = function () {
-		function Validator(el, vnode, binding) {
+		function Validator(el, vnode, value) {
 			(0, _classCallCheck3.default)(this, Validator);
 
 			this.el = el;
-			this.value = binding.value;
+			this.value = value;
 			this.vnode = vnode;
 			//获取子组件（也就是form表单组件）data数据
 			this.childData = vnode.context.$children[this.value];
@@ -508,13 +508,19 @@ webpackJsonp([1],{
 	exports.default = {
 		methods: {
 			submitCheck: function submitCheck() {
-				console.log("submit-check");
+				var f = this.$children;
+				for (var i = 0; i < f.length; i++) {
+					console.log(f[i].$vnode);
+					var c = f[i].$el.getElementsByTagName("input")[0];
+					var v = new Validator(c, f[i].$vnode, i);
+					blur(v);
+				}
 			}
 		},
 		directives: {
 			validator: {
 				bind: function bind(el, binding, vnode, oldVnode) {
-					var v = new Validator(el, vnode, binding);
+					var v = new Validator(el, vnode, binding.value);
 					el.onfocus = function () {
 						focus(v);
 					};
@@ -529,6 +535,81 @@ webpackJsonp([1],{
 /***/ },
 
 /***/ 137:
+/***/ function(module, exports) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	exports.default = function (instance, Constructor) {
+	  if (!(instance instanceof Constructor)) {
+	    throw new TypeError("Cannot call a class as a function");
+	  }
+	};
+
+/***/ },
+
+/***/ 138:
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	exports.__esModule = true;
+
+	var _defineProperty = __webpack_require__(139);
+
+	var _defineProperty2 = _interopRequireDefault(_defineProperty);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = function () {
+	  function defineProperties(target, props) {
+	    for (var i = 0; i < props.length; i++) {
+	      var descriptor = props[i];
+	      descriptor.enumerable = descriptor.enumerable || false;
+	      descriptor.configurable = true;
+	      if ("value" in descriptor) descriptor.writable = true;
+	      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
+	    }
+	  }
+
+	  return function (Constructor, protoProps, staticProps) {
+	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+	    if (staticProps) defineProperties(Constructor, staticProps);
+	    return Constructor;
+	  };
+	}();
+
+/***/ },
+
+/***/ 139:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(140), __esModule: true };
+
+/***/ },
+
+/***/ 140:
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(141);
+	var $Object = __webpack_require__(7).Object;
+	module.exports = function defineProperty(it, key, desc){
+	  return $Object.defineProperty(it, key, desc);
+	};
+
+/***/ },
+
+/***/ 141:
+/***/ function(module, exports, __webpack_require__) {
+
+	var $export = __webpack_require__(5);
+	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
+	$export($export.S + $export.F * !__webpack_require__(15), 'Object', {defineProperty: __webpack_require__(11).f});
+
+/***/ },
+
+/***/ 142:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -564,14 +645,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 138:
+/***/ 143:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(139)
+	var __vue_template__ = __webpack_require__(144)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -606,7 +687,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 139:
+/***/ 144:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -621,14 +702,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 140:
+/***/ 145:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(141)
+	var __vue_template__ = __webpack_require__(146)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -663,7 +744,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 141:
+/***/ 146:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -678,14 +759,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 142:
+/***/ 147:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(143)
+	var __vue_template__ = __webpack_require__(148)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -720,7 +801,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 143:
+/***/ 148:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -735,14 +816,14 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 144:
+/***/ 149:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* template */
-	var __vue_template__ = __webpack_require__(145)
+	var __vue_template__ = __webpack_require__(150)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -777,7 +858,7 @@ webpackJsonp([1],{
 
 /***/ },
 
-/***/ 145:
+/***/ 150:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
@@ -789,81 +870,6 @@ webpackJsonp([1],{
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-13a480c6", module.exports)
 	  }
 	}
-
-/***/ },
-
-/***/ 172:
-/***/ function(module, exports) {
-
-	"use strict";
-
-	exports.__esModule = true;
-
-	exports.default = function (instance, Constructor) {
-	  if (!(instance instanceof Constructor)) {
-	    throw new TypeError("Cannot call a class as a function");
-	  }
-	};
-
-/***/ },
-
-/***/ 173:
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	exports.__esModule = true;
-
-	var _defineProperty = __webpack_require__(174);
-
-	var _defineProperty2 = _interopRequireDefault(_defineProperty);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = function () {
-	  function defineProperties(target, props) {
-	    for (var i = 0; i < props.length; i++) {
-	      var descriptor = props[i];
-	      descriptor.enumerable = descriptor.enumerable || false;
-	      descriptor.configurable = true;
-	      if ("value" in descriptor) descriptor.writable = true;
-	      (0, _defineProperty2.default)(target, descriptor.key, descriptor);
-	    }
-	  }
-
-	  return function (Constructor, protoProps, staticProps) {
-	    if (protoProps) defineProperties(Constructor.prototype, protoProps);
-	    if (staticProps) defineProperties(Constructor, staticProps);
-	    return Constructor;
-	  };
-	}();
-
-/***/ },
-
-/***/ 174:
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(175), __esModule: true };
-
-/***/ },
-
-/***/ 175:
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(176);
-	var $Object = __webpack_require__(7).Object;
-	module.exports = function defineProperty(it, key, desc){
-	  return $Object.defineProperty(it, key, desc);
-	};
-
-/***/ },
-
-/***/ 176:
-/***/ function(module, exports, __webpack_require__) {
-
-	var $export = __webpack_require__(5);
-	// 19.1.2.4 / 15.2.3.6 Object.defineProperty(O, P, Attributes)
-	$export($export.S + $export.F * !__webpack_require__(15), 'Object', {defineProperty: __webpack_require__(11).f});
 
 /***/ }
 
