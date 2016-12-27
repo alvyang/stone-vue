@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="validator">
 		<i-input v-bind:config="c" v-for="(c,index) in config">
 			<input type="text" placeholder="请输入..." v-validator="index"/>
 		</i-input>
@@ -48,5 +48,7 @@
 	});
 </script>
 <style>
-	
+	.validator{
+		padding: 30px;
+	}
 </style>

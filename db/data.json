@@ -6,6 +6,9 @@
 		"name":"组件库",
 		"id":"comp_lib"
 	},{
+		"name":"移动端组件库",
+		"id":"phone_lib"
+	},{
 		"name":"前端规范",
 		"id":"rule"
 	},{

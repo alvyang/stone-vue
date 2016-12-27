@@ -23621,6 +23621,10 @@
 
 	var _component_library2 = _interopRequireDefault(_component_library);
 
+	var _phone_component_library = __webpack_require__(182);
+
+	var _phone_component_library2 = _interopRequireDefault(_phone_component_library);
+
 	var _rule = __webpack_require__(117);
 
 	var _rule2 = _interopRequireDefault(_rule);
@@ -23629,13 +23633,14 @@
 
 	var _menu_router2 = _interopRequireDefault(_menu_router);
 
-	var _rule_router = __webpack_require__(166);
+	var _rule_router = __webpack_require__(171);
 
 	var _rule_router2 = _interopRequireDefault(_rule_router);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	//组件库类型路由
+	//引入非组件类界面
 	exports.default = [{
 		path: "/", component: _main2.default
 	}, {
@@ -23648,7 +23653,10 @@
 		path: "/rule",
 		component: _rule2.default,
 		children: _rule_router2.default
-	}]; //引入非组件类界面
+	}, {
+		path: "/phone_lib",
+		component: _phone_component_library2.default
+	}];
 
 /***/ },
 /* 80 */
@@ -23866,7 +23874,7 @@
 
 
 	// module
-	exports.push([module.id, "\n.com_lib_view{\n\tposition: absolute;\n\tleft: 180px;\n\ttop: 55px;\n}\n", ""]);
+	exports.push([module.id, "\n.component-enter-active, .component-leave-active {\n  transition: opacity 0.8s\n}\n.component-enter, .component-leave-active {\n  opacity: 0\n}\n.com_lib_view{\n\tposition: absolute;\n\tleft: 180px;\n\ttop: 55px;\n}\n", ""]);
 
 	// exports
 
@@ -23895,6 +23903,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	//
+	//
 	//
 	//
 	//
@@ -24700,9 +24710,13 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;
-	  return _vm._h('div', [_vm._h('my-menu'), " ", _vm._h('router-view', {
+	  return _vm._h('div', [_vm._h('my-menu'), " ", _vm._h('transition', {
+	    attrs: {
+	      "name": "component"
+	    }
+	  }, [_vm._h('router-view', {
 	    staticClass: "com_lib_view"
-	  })])
+	  })])])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -24883,23 +24897,23 @@
 	//引入非组件类界面
 	var Other = function Other(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(151));
+			return resolve(__webpack_require__(145));
 		});
 	}; //引入表单子路由
 
 	var Button = function Button(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(156));
+			return resolve(__webpack_require__(150));
 		});
 	};
 	var Form = function Form(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(161));
+			return resolve(__webpack_require__(155));
 		});
 	};
 	var Validator = function Validator(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(177));
+			return resolve(__webpack_require__(160));
 		});
 	};
 
@@ -24936,22 +24950,22 @@
 	};
 	var Checkbox = function Checkbox(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(143));
+			return resolve(__webpack_require__(137));
 		});
 	};
 	var Radio = function Radio(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(145));
+			return resolve(__webpack_require__(139));
 		});
 	};
 	var Select = function Select(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(147));
+			return resolve(__webpack_require__(141));
 		});
 	};
 	var Selects = function Selects(resolve) {
 		return __webpack_require__.e/* nsure */(1, function () {
-			return resolve(__webpack_require__(149));
+			return resolve(__webpack_require__(143));
 		});
 	};
 
@@ -25012,7 +25026,12 @@
 /* 163 */,
 /* 164 */,
 /* 165 */,
-/* 166 */
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -25023,12 +25042,12 @@
 	//引入所有form表单，vue页面
 	var Color = function Color(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
-			return resolve(__webpack_require__(167));
+			return resolve(__webpack_require__(172));
 		});
 	};
 	var Font = function Font(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
-			return resolve(__webpack_require__(172));
+			return resolve(__webpack_require__(177));
 		});
 	};
 
@@ -25039,6 +25058,128 @@
 	}, {
 		path: 'font', component: Font
 	}];
+
+/***/ },
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
+	__webpack_require__(183)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(185)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(186)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "D:\\lvyang\\repositories\\stone-vue\\view\\phone_component_library.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-60623d1a", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-60623d1a", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] phone_component_library.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 183 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(184);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(45)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-60623d1a!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./phone_component_library.vue", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js!./../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-60623d1a!./../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./phone_component_library.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(44)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 185 */
+/***/ function(module, exports) {
+
+	//
+	//
+	//
+	//
+	//
+	"use strict";
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;
+	  return _vm._h('div', ["\n\tphone\n"])
+	},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-60623d1a", module.exports)
+	  }
+	}
 
 /***/ }
 /******/ ]);

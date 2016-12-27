@@ -1,6 +1,7 @@
 //引入非组件类界面
 import Main from "view/main.vue";
 import Comp_lib from "view/component_library.vue";
+import PhoneCompLib from "view/phone_component_library.vue";
 import Rule from "view/rule.vue";
 
 //组件库类型路由
@@ -19,4 +20,7 @@ export default [{
 	path:"/rule",
 	component:Rule,
 	children:RuleRouter,
+},{
+	path:"/phone_lib",
+	component:PhoneCompLib,
 }]

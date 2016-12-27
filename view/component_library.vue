@@ -1,13 +1,14 @@
 <template>
 	<div>
 		<my-menu></my-menu>
-		<router-view class="com_lib_view"></router-view>
+		<transition name="component">
+			<router-view class="com_lib_view"></router-view>
+		</transition>
 	</div>
 </template>
 <script>
 	import $ from "jquery";
 	import Menu from "components/Menu.vue";
-	
 	export default({
 		components:{
 			'my-menu':{
@@ -27,6 +28,12 @@
 	});
 </script>
 <style>
+	.component-enter-active, .component-leave-active {
+	  transition: opacity 0.8s
+	}
+	.component-enter, .component-leave-active {
+	  opacity: 0
+	}
 	.com_lib_view{
 		position: absolute;
 		left: 180px;
