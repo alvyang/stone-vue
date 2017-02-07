@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="navigation">
-			<a v-on:click="routePage(n.id,index)" v-for="(n,index) in nav" :class="{nav_active:index==currentIndex}" v-if="n.id!='url'">{{n.name}}</a>
+			<a v-on:click="routePage(n.id,index)" :class="{nav_active:index==currentIndex}" v-for="(n,index) in nav" v-if="n.id!='url'">{{n.name}}</a>
 			<a v-bind:href="n.url" target="_blank" v-else>{{n.name}}</a>
 		</div>
 	</div>
@@ -22,6 +22,11 @@
 		watch:{
 			// 如果路由有变化，会再次执行该方法 只要地址变化，就会执行这个方法'$route':'getNavData'
 			'$route' (to, from) {
+				this.setCurrentIndex(to);
+			}
+		},
+		methods:{
+			setCurrentIndex(to){
 				var fullPath = to.fullPath;
 				for(let i=0 ; i < this.nav.length ; i++){
 					if(fullPath.includes(this.nav[i].id)){
@@ -31,9 +36,7 @@
 						this.currentIndex = 0;
 					}
 				}
-			}
-		},
-		methods:{
+			},
 			routePage(path,index){
 				this.currentIndex = index;
 				//使用router-link 无法动态添加路径，采用编程路由方式实现
@@ -57,6 +60,7 @@
 				$.ajaxSettings.async = false; 
 				$.getJSON("db/data.json",{},function(data){
 				    _self.nav=data.nav;
+				    _self.setCurrentIndex(_self.$router.currentRoute);
 				});
 			}
 		}
